@@ -1,0 +1,51 @@
+%\chapter{App A}
+% Versicherung bei Diplomarbeiten...
+
+\chapter{Hinweise zum Layout}
+
+\section{Druckseiten}
+
+Zur besseren Korrektur der Arbeit sollten die im Prüfungsamt abzugebenden Exemplare einseitig gedruckt werden. Die Vorlage ist entsprechend ausgelegt. Für sich selbst, für Angehörige, etc, kann man später dann leicht noch mal eine beidseitig bedruckte Fassung erstellen.
+
+\chapter{Zeitplanung}
+
+\begin{itemize}
+\item Erfahrungsgemäß ist das Aufschreiben der Arbeit für die meisten mit am schwersten. Daher sollte damit frühzeitig begonnen werden. Spätestens zwei Wochen vor der Abgabe wird es allerdings allerhöchste Eisenbahn!
+\item Der Druck der Arbeit kann unter Umständen einen Tag in Anspruch nehmen, daher empfiehlt es sich, einen Abgabetermin ab Dienstag-Freitag zu wählen.
+\end{itemize}
+
+
+\chapter{Hinweise zu einzelnen Werkzeugen}
+
+\section{Online Editoren / Overleaf}
+
+Es gibt eine Vielzahl an Online Editoren für Latex. Diese erleichtern einem etwas die Arbeit was die Installation und Verwaltung der notwendigen Pakete angeht. Darüber hinaus lassen sich mit Online Editoren die Texte von jedem Rechner mit Internet-Anschluss aus leicht bearbeiten. Ganz praktisch, wenn man einige Zeit im Labor arbeitet und dort nicht extra seinen Laptop mit aufbauen möchte.
+
+\subsection{Overleaf: Spezifische Tipps}
+
+Um mit Overleaf auch etwas komplexere Latex Projekte zu bearbeiten, lohnt sich ein Blick auf die latexmkrc Datei. Die kann man Top-Level im jeweiligen Projekt anlegen und dort einige erweiterte Konfigurationen vornehmen. So lassen sich z.B. die Latex Variablen dort neu definieren, um z.B. eigene Vorlagen in einem dedizierten Verzeichnis unterzubringen.
+
+Das folgende Beispiel zeigt, wie das Unterverzeichnis YY\_Styles der Variable TEXINPUTS hinzugefügt werden kann. Dies ist z.B. notwendig, um diese Dokumentvorlage mit Overleaf korrekt rendern zu können.
+\begin{verbatim}
+$ENV{'TEXINPUTS'}='./YY_Styles//:' . $ENV{'TEXINPUTS'}; 
+\end{verbatim}
+
+\cleardoublepage
+
+\chapter{Checklisten}
+
+\section{Checkliste Anmeldung}
+
+\begin{itemize}
+\item Ich habe das Anmeldungsformular von den Seiten des Prüfungsamtes der Technischen Fakultät heruntergeladen und ausgedruckt. Die Anmeldung habe ich asugefüllt. Bei Anmeldungen zu MA Arbeiten der Interdisziplinären Medienwissenschaften habe ich darauf geachtet, dass der Dozent den Titel der Arbeit eingetragen hat.
+\item Ich habe, falls es für meine Arbeiten notwendig ist, einen Schlüssel zu den entsprechenden Räumen erhalten.
+\item Ich wurde auf die Mailingliste der aktuellen Abschlussarbeitsschreibenden aufgenommen.
+\item Ich wurde in die entsprechenden Unix Gruppen aufgenommen, damit ich alle notwendigen Rechte habe, die für meine Arbeit notwendigen Rechner zu nutzen.
+\item Ich habe eine Einführung in die Labornutzung erhalten (soweit zutreffend).
+\item Ich habe eine Einführung in die von mir genutzte Hardware erhalten.
+\item Ich habe mich über Urlaubszeiten der Gutachter informiert.
+\end{itemize}
+
+\cleardoublepage
+
+\subimport{.}{versicherung}
