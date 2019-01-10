@@ -282,7 +282,32 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Eigene Klassen Struktur]{Eigene Klassen Struktur}
-\includegraphics[width=\textwidth]{images/eigenesClass.png}
+%\includegraphics[width=\textwidth]{images/eigenesClass.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+import {stateManagement} from './stateManagement';
+let element;
+export default AFRAME.registerComponent('class', {
+    init: function(){
+        element = this.el;
+        element.addEventListener('click', () => {
+            handleClick();
+        });
+    }
+});
+export function handleNotify(event) {
+    matchState(event);
+}
+function matchState(state) {
+    // match the element with its state
+}
+function handleClick(){
+    changeState();
+}
+function changeState() {
+    // change state with stateManagement
+    stateManagement();
+}
+\end{lstlisting}
 \label{fig:eigenesClass} 
 \end{figure}
  
@@ -295,7 +320,40 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Bessere Klassen Struktur]{Bessere Klassen Struktur}
-\includegraphics[width=\textwidth]{images/bestClass.png}
+%\includegraphics[width=\textwidth]{images/bestClass.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+import $ from 'jquery';
+import {stateManagement} from './stateManagement';
+let elements=[];
+export default AFRAME.registerComponent('class', {
+    init: function(){
+        element = $(this.el);
+        elements.push(element);
+        element.on('click', () => {
+            this.handleClick();
+        });
+        // emitted by handleNotify()
+        element.on('getNewState', (state) => {
+            this.matchState(state);
+        });
+    },
+    handleClick: function() {
+        this.changeState();
+    },
+    changeState: function() {
+        // change state with stateManagement
+        stateManagement();
+    },
+    matchState: function(state) {
+        // match the element with its state
+    },
+});
+export function handleNotify(event) {
+    elements.forEach((element) => {
+        element.trigger('getNewSatete', event);
+    });
+}
+\end{lstlisting}
 \label{fig:bestesClass} 
 \end{figure}
  
@@ -337,7 +395,27 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Kamera Element]{Kamera Element}
-\includegraphics[width=\textwidth]{images/cameraHtml.png}
+%\includegraphics[width=\textwidth]{images/cameraHtml.png}
+\begin{lstlisting}[language=HTML5, style=htmlcssjs]
+<a-entity camera-move id="cameraRig" position="0 1 -0.4">
+    <!-- Vive controllers -->
+    <a-entity id="viveControllerLeft" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera; defaultPlaneSize: 20;" 
+    vive-controls="hand: left; model: false;" controller_6_d visible="false">
+        <!-- some elements here ...  -->
+    </a-entity>
+    <a-entity id="viveControllerRight" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera; defaultPlaneSize: 20;" 
+    vive-controls="hand: right; model: false;" controller_6_d visible="false">
+       <!-- some elements here ...  -->
+    </a-entity>
+    <!-- Gear VR controller -->
+    <a-entity gear_controller teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera;" gearvr-controls id="gearController" 
+    laser-controls="hand: right" visible="false"></a-entity>
+    <!-- camera -->
+    <a-camera id="camera" wasd-controls="acceleration:20; " look-controls="pointerLockEnabled: false;" position="0 0 0">
+        <!-- some elements here ...  -->
+    </a-camera>
+</a-entity>
+\end{lstlisting}
 \label{fig:cameraHtml} 
 \end{figure}
   
@@ -347,7 +425,40 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Automatische Navigation]{Automatische Navigation}
-\includegraphics[width=\textwidth]{images/cameraMove.png}
+%\includegraphics[width=\textwidth]{images/cameraMove.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+AFRAME.registerComponent('camera-move', {
+    schema: {
+        disable: {type: 'boolean', default: false}
+    },
+    init: function () {
+        let data = this.data;
+        element = this.el;
+        if (data.disable) {
+            return false;
+        }
+        cameraPosition = positionVar.origin.name;
+        // get more elements here ...
+        handDisinfectionHandle = document.querySelector('#handDisinfectionHandle');
+        nacl500Bottle.addEventListener('raycaster-intersected', moveToCupboardAndBack);
+        infusionSetOpen.addEventListener('raycaster-intersected', moveToCabinetAndBack);
+        infusionSetHanged.addEventListener('raycaster-intersected', moveToHolderAndBack);
+        infusionSetHangedFilled.addEventListener('raycaster-intersected', moveToHolderAndBack);
+        handDisinfectionHandle.addEventListener('raycaster-intersected', moveToHandDisinfectionAndBack);
+    },
+    update: function (oldData) {
+        let data = this.data;
+        // in update function must assign the elements again
+        cameraPosition = positionVar.origin.name;
+        // get more elements here ...
+        handDisinfectionHandle = document.querySelector('#handDisinfectionHandle');
+        if (data.disable) {
+            removeAllEventListener();
+        }
+    },
+});
+
+\end{lstlisting}
 \label{fig:cameraMove} 
 \end{figure}
   
@@ -363,7 +474,13 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[a-cursor Element]{a-cursor Element}
-\includegraphics[width=\textwidth]{images/aCursorElement.png}
+%\includegraphics[width=\textwidth]{images/aCursorElement.png}
+\begin{lstlisting}[language=HTML5, style=htmlcssjs]
+<!-- cursor for plat and 3D version -->
+<a-cursor id="cursor" objects=".clickable" cursor-submit raycaster-intersection 
+fuse-timeout="1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 0.0015; radiusOuter: 0.0025;">
+</a-cursor>
+\end{lstlisting}
 \label{fig:aCursorElement} 
 \end{figure}
   
@@ -380,8 +497,21 @@ export default class stateIndex {
 \begin{figure}[ht]
 \vspace*{1em}
 \centering
-\caption[Automatische Navigation]{Automatische Navigation}
-\includegraphics[width=\textwidth]{images/raycasterIntersection.png}
+\caption[Raycaster Intersection]{Raycaster Intersection}
+%\includegraphics[width=\textwidth]{images/raycasterIntersection.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+AFRAME.registerComponent('raycaster-intersection', {
+    init: function () {
+        const el = this.el;
+        el.addEventListener('raycaster-intersection', ()=>{
+            this.el.setAttribute('material', 'color', 'green');
+        });
+        el.addEventListener('raycaster-intersection-cleared', ()=>{
+            this.el.setAttribute('material', 'color', 'black');
+        });
+    }
+});
+\end{lstlisting}
 \label{fig:raycasterIntersection} 
 \end{figure}
   
@@ -391,7 +521,23 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Zeiger bestimmen]{Zeiger bestimmen}
-\includegraphics[width=\textwidth]{images/cursorSubmit.png}
+%\includegraphics[width=\textwidth]{images/cursorSubmit.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+import {playSubmitSound} from "./submitSound";
+export default AFRAME.registerComponent('cursor-submit', {
+    // By clicking change the color of cursor to red
+    init: function () {
+        const el = this.el;
+        el.addEventListener('click', (event) => {
+            this.el.setAttribute('material', 'color', 'red');
+            playSubmitSound();
+            setTimeout(() => {
+                this.el.setAttribute('material', 'color', 'black');
+            }, 300);
+        })
+    }
+});
+\end{lstlisting}
 \label{fig:cursorSubmit} 
 \end{figure}
   
@@ -413,11 +559,12 @@ export default class stateIndex {
       \item \textbf{Raycaster}: Die Idee des Raycasters ist, den Raycaster vom Controller zu den Augen zu bringen. Der Zeiger ist nicht mehr ein Ring, sondern eins aus dem Augen ausstrahlende Linie, sodass der Abstand zwischen Augen und Objekten keine Rolle spielt. Allerdings wird der Raycaster in Gear VR nicht richtig dargestellt. Die Linie wird in viele kurze Stückchen geschnitten. Und die Stückchen zeigen nicht in eine bestimmte Richtung. (Abbildung ~\ref{fig:GearVRRaycaster})
       
 \begin{figure}[ht]
-\vspace*{1em}
+\vspace*{2.5em}
 \centering
 \caption[Raycaster in Gear VR]{Raycaster aus Kamera in Gear VR in A-Frame basic Scene}
 \includegraphics[width=\textwidth]{images/gearVRRaycaster.png}
 \label{fig:GearVRRaycaster} 
+\vspace*{1.5em}
 \end{figure}
       
       \item \textbf{große Skalierung}: Der Zeiger und die anderen Objekte werden weit gelegt. Um die Objekte deutlicher zu sehen, werden alle Objekten vergrößert, sodass die relative Größe sich nicht verändert. Die Position der Kamera wird dafür angepasst.
@@ -455,7 +602,11 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Gear VR Controller Element]{Gear VR Controller Element}
-\includegraphics[width=\textwidth]{images/gearVRControllerElement.png}
+%\includegraphics[width=\textwidth]{images/gearVRControllerElement.png}
+\begin{lstlisting}[language=HTML5, style=htmlcssjs]
+<!-- laser controller for gear version -->
+<a-entity id="gearController" gear_controller teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera;" laser-controls="hand: right" visible="false"></a-entity>
+\end{lstlisting}
 \label{fig:GearVRControllerElement} 
 \end{figure}
   
@@ -483,7 +634,11 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Vive Controller Element]{Vive Controller Element}
-\includegraphics[width=\textwidth]{images/viveControllerElement.png}
+%\includegraphics[width=\textwidth]{images/viveControllerElement.png}
+\begin{lstlisting}[language=HTML5, style=htmlcssjs]
+<!-- Vive controlers-->
+<a-entity id="viveControllerLeft" teleport-controls="cameraRig: #cameraRig; teleportOrigin: #camera; defaultPlaneSize: 20;" vive-controls="hand: left; model: false;" controller_6_d visible="false"></a-entity>
+\end{lstlisting}
 \label{fig:viveControllerElement} 
 \end{figure}
   
@@ -495,7 +650,46 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[6 DoF Controller]{6 DoF Controller}
-\includegraphics[width=\textwidth]{images/controller6D.png}
+%\includegraphics[width=\textwidth]{images/controller6D.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export default AFRAME.registerComponent('controller_6_d', {
+    init: function(){
+        const el = this.el;
+        this.viveObserver = new Observable();
+        this.viveObserverPress = new Observable();
+        this.viveObserverRelease = new Observable();
+        // Add function from observers
+        this.viveObserver.subscribe(handleControllerNotifyCupboardDoor);
+        // Listen to 'triggerdown'
+        this.viveObserverPress.subscribe(handleControllerPressPortfolio);
+        // listen to 'triggerup'
+        this.viveObserverRelease.subscribe(handleControllerReleaseControllerHand);
+        $(el).on('triggerdown', () => {
+            playSubmitSound();
+            let handIndicator;
+            if (el.getAttribute('id') === 'viveControllerRight') {
+                handIndicator=document.querySelector('#rightHandIndicator');
+            }
+            else if (el.getAttribute('id') === 'viveControllerLeft') {
+                handIndicator=document.querySelector('#leftHandIndicator');
+            }
+            const triggerPosition = haveSthInHand(el).length > 0 ?
+                getWorldPosition(handIndicator) : getWorldPosition(el);
+            const triggerEvent = {
+                eventName: 'triggerPress',
+                position: triggerPosition,
+                activeController: el
+            };
+            // trigger pressed
+            this.viveObserverPress.notify(triggerEvent);
+            // trigger clicked
+            this.viveObserver.notify(triggerEvent);
+        });
+        $(el).on('trackpaddown', () => {
+            playTeleportSound();
+        });
+        // handle event triggerup and trackpadup here ...
+\end{lstlisting}
 \label{fig:controller6D} 
 \end{figure}
   
@@ -505,7 +699,14 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[get global position]{get global position}
-\includegraphics[width=\textwidth]{images/getWorldPosition.png}
+%\includegraphics[width=\textwidth]{images/getWorldPosition.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export function getWorldPosition(element) {
+    let worldPos = new THREE.Vector3();
+    worldPos.setFromMatrixPosition(element.object3D.matrixWorld);
+    return worldPos;
+}
+\end{lstlisting}
 \label{fig:getWorldPosition} 
 \end{figure}
   
@@ -531,7 +732,31 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Bearbeitung der Krankenakte]{Bearbeitung der Krankenakte}
-\includegraphics[width=\textwidth]{images/portfolioPress.png}
+%\includegraphics[width=\textwidth]{images/portfolioPress.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export function handleControllerPressPortfolio (triggerEvent) {
+    if (stateIndex.getIn(['portfolio', 'finish'])) {
+        return false;
+    }
+    activeController = triggerEvent.activeController;
+    if(detectCollision(element, activeController)){
+        if(
+            controllerStateIndex.getControllerState('portfolioInHand') === null
+            && haveSthInHand(activeController).length === 0
+        ) {
+            activeController = triggerEvent.activeController;
+            let activeControllerId = activeController.getAttribute('id');
+            controllerStateIndex.setControllerState('isPortfolioHandling', true);
+            controllerStateIndex.setControllerState('portfolioInHand', activeControllerId);
+            stateIndex.set('started', true);
+            stateIndex.set('hint', hints.checkPortfolio);
+            setTimeout(()=>{
+                canCheckPortfolio = true;
+            }, 300);
+        }
+    }
+}
+\end{lstlisting}
 \label{fig:portfolioPress} 
 \end{figure}
   
@@ -555,7 +780,48 @@ export default class stateIndex {
 \vspace*{1em}
 \centering
 \caption[Veränderung der Attribute]{Veränderung der Attribute}
-\includegraphics[width=\textwidth]{images/controllerAction.png}
+%\includegraphics[width=\textwidth]{images/controllerAction.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export class controllerActions {
+    constructor (element, activeController, 
+        // pass the value of attribute to change here ...
+    ) {
+        this.el = element;
+        this.scene = null;
+        this.activeController = activeController;
+        // get values from parameters here ...
+        this.observer = this.buildObserver(this.el);
+        this.bindController(this.activeController);
+    }
+    buildObserver(element) {
+        return (
+            new MutationObserver((event) => {
+                // append element to controller
+                let nodeAdded = event[0].addedNodes[0] === element;
+                for (let i = 0; i < event.length; i++) {
+                        nodeAdded = event[i].addedNodes[0] === element;
+                }
+                // remove element from controller
+                let nodeRemoved = event[0].removedNodes[0] === element;
+                for (let i = 0; i < event.length; i++) {
+                    nodeRemoved = event[i].removedNodes[0] === element;
+                }
+                if (nodeAdded) {
+                    if (!element) {
+                        return false;
+                    }
+                    // change attribute after adding to controller here ...
+                }
+                else if (nodeRemoved) {
+                    if (!element) {
+                        return fasle;
+                    }
+                    // change attribute after removing from controller here ...
+                }
+            })
+        );
+    }
+\end{lstlisting}
 \label{fig:controllerAction} 
 \end{figure}
   
