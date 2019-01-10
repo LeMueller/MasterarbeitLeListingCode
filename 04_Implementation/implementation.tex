@@ -851,7 +851,14 @@ export class controllerActions {
 \vspace*{1em}
 \centering
 \caption[Kollisionserkennung]{Kollisionserkennung}
-\includegraphics[width=\textwidth]{images/collisionDetection.png}
+%\includegraphics[width=\textwidth]{images/collisionDetection.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export function detectCollision(elementObject, elementTarget) {
+    const objectBox = new THREE.Box3().setFromObject(elementObject.object3D);
+    const targetBoX = new THREE.Box3().setFromObject(elementTarget.object3D);
+    return objectBox.intersectsBox(targetBoX);
+}
+\end{lstlisting}
 \label{fig:collisionDetection} 
 \end{figure}
   
@@ -882,7 +889,34 @@ export class controllerActions {
 \vspace*{1em}
 \centering
 \caption[Freier Fall]{Freier Fall}
-\includegraphics[width=\textwidth]{images/fallDown.png}
+%\includegraphics[width=\textwidth]{images/fallDown.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export default function dropDown(element, lowestY = defaultLowestY, specialConditions = []) {
+    const twoCabinets = document.querySelector('#twoCabinets');
+    const twoCabinetsWorldBound = getWorldBound(twoCabinets);
+    twoCabinetsCondition = {worldBound: twoCabinetsWorldBound, lowestY: twoCabinetsWorldBound.max.y + defaultLowestY};
+    const floor = document.querySelector('#floorBox');
+    const originalPosition = element.getAttribute('position');
+    const {x, y, z} = originalPosition;
+    timeInterval = setInterval(() => {
+        speed = speed + accelerate;
+        element.setAttribute('position', `${x} ${y-speed} ${z}`);
+        if (
+            detectCollision(element, twoCabinets)
+            || detectCollision(element, floor)
+            || element.getAttribute('position').y <= lowestY
+            || handleTwoCabinetsCondition(element)
+            || handleSpecialConditions(element, specialConditions)
+        ) {
+            clearInterval(timeInterval);
+            speed = 0;
+        }
+    }, detectFrequency);
+}
+export function getWorldBound(element) {
+    let boundingBox = new THREE.Box3().setFromObject(element.object3D);
+}
+\end{lstlisting}
 \label{fig:fallDown} 
 \end{figure}
   
@@ -936,7 +970,18 @@ PC & Vive                                                                       
 \vspace*{1em}
 \centering
 \caption[Geräusche abspielen]{Geräusche abspielen}
-\includegraphics[width=\textwidth]{images/submitSound.png}
+%\includegraphics[width=\textwidth]{images/submitSound.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+let audio;
+AFRAME.registerComponent('submit_sound', {
+    init:function() {
+        audio = document.querySelector("#submitSound").components.sound;
+    }
+});
+export function playSubmitSound() {
+    audio.playSound();
+}
+\end{lstlisting}
 \label{fig:submitSound} 
 \end{figure}
  
@@ -981,7 +1026,39 @@ easing    & Die Erleichterung der Animation                                     
 \vspace*{1em}
 \centering
 \caption[Animation]{Animation}
-\includegraphics[width=\textwidth]{images/aAnimation.png}
+%\includegraphics[width=\textwidth]{images/aAnimation.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+import $ from 'jquery';
+const aAnimationWrapper = (el, begin, attribute, from, to,
+    dur, direction='', remove=false, fill='none',
+    repeat=0, easing='ease') 
+    => {
+    const move=document.createElement("a-animation");
+    move.setAttribute("begin",begin);
+    move.setAttribute("attribute", attribute);
+    move.setAttribute("from", from);
+    // set other attributes here ...
+    if (!el.append) {
+        el.appendChild(move);
+    }
+    else {
+        el.append(move);
+    }
+    if (remove) {
+        if (repeat) {
+            setTimeout(()=>{
+                $(move).remove();
+            }, dur * (repeat + 1));
+        }
+        else {
+            setTimeout(()=>{
+                $(move).remove();
+            }, dur);
+        }
+    }
+};
+export default aAnimationWrapper;
+\end{lstlisting}
 \label{fig:aAnimation} 
 \end{figure}
  
@@ -1015,7 +1092,10 @@ easing    & Die Erleichterung der Animation                                     
 \vspace*{1em}
 \centering
 \caption[Aufruf der Animation von Hand]{Aufruf der Animation von Hand}
-\includegraphics[width=\textwidth]{images/handAnimation.png}
+%\includegraphics[width=\textwidth]{images/handAnimation.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+controllerRightHand.setAttribute("animation-mixer", "loop: once");
+\end{lstlisting}
 \label{fig:handAnimation} 
 \end{figure}
  
@@ -1039,7 +1119,42 @@ easing    & Die Erleichterung der Animation                                     
 \vspace*{1em}
 \centering
 \caption[Drehung des Zeigers der Uhr]{Drehung des Zeigers der Uhr}
-\includegraphics[width=\textwidth]{images/clockRoll.png}
+%\includegraphics[width=\textwidth]{images/clockRoll.png}
+\begin{lstlisting}[language=JavaScript, style=htmlcssjs]
+export default AFRAME.registerComponent('clock_hand_roll',{
+    schema:{
+        type:'string', default: "secondClockHand"
+    },
+    tick: function(time, timeDelta){
+        const oTime= new Date();
+        let curTime;
+        if(this.data === "secondClockHand" ){
+            curTime = oTime.getSeconds();
+        }else if(this.data === "minuteClockHand"){
+            curTime = oTime.getMinutes();
+        }else if(this.data === "hourClockHand"){
+            curTime = oTime.getHours();
+        }else {
+            alert("invalid input!");
+        }
+        setClockHandPosition(this.el, curTime, this.data);
+    }
+});
+const setClockHandPosition = (el, curTime, typeOfClockHand) => {
+    let gradForOneSec;
+    let gradRoll;
+    let rotationArray;
+    if(typeOfClockHand === "secondClockHand" || typeOfClockHand === "minuteClockHand"){
+        gradForOneSec = 360 / 60;
+    }else if(typeOfClockHand === "hourClockHand"){
+        gradForOneSec = 360 / 12;
+    }
+    gradRoll = curTime * gradForOneSec;
+    //The value of rotation is a object
+    rotationArray = { x: -gradRoll, y: 0, z: 0 };
+    el.setAttribute("rotation", rotationArray);
+};
+\end{lstlisting}
 \label{fig:clockRoll} 
 \end{figure}
  
