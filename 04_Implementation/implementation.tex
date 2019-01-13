@@ -833,9 +833,15 @@ export class controllerActions {
   \noindent
   Die Hinweis-Box wird durch das built-in Element {\fontfamily{qcr}\selectfont a-box} implementiert. Durch die Konfiguration des Attributs {\fontfamily{qcr}\selectfont material} wird die Hinweis-Box in halb-transparentem rot dargestellt, wenn ein Objekt, beispielsweise die Krankenakte, in der Hand ist. Die Hinweis-Box beobachtet die Zustände aller Objekte. Wenn alle nötige Aktivitäten für das Objekt fertig gemacht sind, z.B. Überprüfung der Krankenakte, werden die Änderungen der entsprechenden Zustände von der Hinweis-Box erkannt. Nach der Erkennung wird das Attribut {\fontfamily{qcr}\selectfont material} in grün umgeschrieben.
   
-  Wenn die Kollision zwischen der grünen Hinweis-Box und dem Objekt in der Hand während des Loslösens auf den Hair-Trigger des Controllers detektiert wird, wird der entsprechende Zustand geändert und das Objekt auf den entsprechend Platz gelegt.
+  Wenn die Kollision zwischen der grünen Hinweis-Box und dem Objekt in der Hand während des Loslösens auf den Hair-Trigger des Controllers detektiert wird, wird der entsprechende Zustand geändert und das Objekt auf den entsprechend Platz gelegt. (Abbildung ~\ref{fig:Hinweis-box})
   
-  image: M5 toggleBoxPortfolio .........
+\begin{figure}[ht]
+\vspace*{1em}
+\centering
+\caption[Hinweis-Box]{Hinweis-Box}
+\includegraphics[width=\textwidth]{images/krankenakteChecken.png}
+\label{fig:Hinweis-box} 
+\end{figure}
   
   \vspace{1em}
   \noindent
@@ -992,9 +998,15 @@ export function playSubmitSound() {
  
  Gleichzeitig überprüfen die zwei Umschalter alle 0.5 Sekunden, ob die Kollision zwischen dem Tuch und dem Umschalter erkannt wird. Wenn ein Schalter das Tuch getroffen hat, wird der entsprechende Zustand für den Vive Controller als {\fontfamily{qcr}\selectfont true} gesetzt.
  
- Solange die beiden Zustände der Umschalter {\fontfamily{qcr}\selectfont true} sind, wechselt die Farbe der Hinweis-Box über dem Mülleimer zu grün, um die Information zu teilen, dass das Tuch und die Handschuhe in den Mülleimer eingeworfen werden dürfen.
+ Solange die beiden Zustände der Umschalter {\fontfamily{qcr}\selectfont true} sind, wechselt die Farbe der Hinweis-Box über dem Mülleimer zu grün, um die Information zu teilen, dass das Tuch und die Handschuhe in den Mülleimer eingeworfen werden dürfen. (Abbildung ~\ref{fig:arbeitsflaescheDesinfektion})
  
- image: m5 Arbeitsfläche desinfektion Szene .........
+ \begin{figure}[ht]
+\vspace*{1.8em}
+\centering
+\caption[Arbeitsfläche Desinfektion]{Arbeitsfläche Desinfektion}
+\includegraphics[width=\textwidth]{images/arbeitsflaescheDesinfektion.png}
+\label{fig:arbeitsflaescheDesinfektion} 
+\end{figure}
  
  \subsection{Animation}
  Die Animation in A-Frame wird auch durch ein HTML Element {\fontfamily{qcr}\selectfont a-animation} bezeichnet. Das übergeordnete Element ist das Objekt das zu animieren ist. Die genaue Manipulation wird durch die Attribute des {\fontfamily{qcr}\selectfont a-animation} Elements konfiguriert. (Tabelle ~\ref{tab:aAnimation})
