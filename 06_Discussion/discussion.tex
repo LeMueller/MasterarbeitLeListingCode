@@ -1,18 +1,16 @@
 \chapter{Zusammenfassung}
 
-Hier wird reflektiert, in welchem Umfang die Zielsetzungen der Arbeit erreicht werden konnten. In der Regel gelingt dies durch den Bezug auf die Evaluation.
-
-Typischer Umfang: 1-2 Seiten.
+Durch die Studie werden der Lerneffekt und die Benutzererfahrung der VR Übung untersucht. In diesem Kapitel werden die Erreichung der Ziele, die getroffenen Probleme während der Entwicklung und die Aussicht der WebVR Technik diskutiert.
 
 \section{Erreichung der Ziele}
 
-Im Kapitel Einleitung werden sechs Ziele für das Projekt eingesetzt. Durch die Evaluation wird das Projekt ist es klar, ob diese Ziele erreicht werden. Hier werden die Ergebnisse für alle Ziele erzählt:
+Im Kapitel Einleitung werden sechs Ziele für das Projekt eingesetzt. Durch die Evaluation des Projektes wird es bestimmen, ob diese Ziele erreicht werden. Hier werden die Ergebnisse für alle Ziele erzählt:
 
 \begin{enumerate}[labelsep=1ex]
 	\renewcommand{\labelenumi}{\textbf{Z\theenumi.}}
-	\item Ein Unterricht mit VR Übung wird in Moodle erstellt. Der Lerneffekt ist deutlich. Alle neun Versuchspersonen haben den Test über Infusionsvorbereitung durchschnittlich mit der Note XXX von 100 bestanden. Im Durchschnitt erwarb pro Versuchsperson bei dem Test nach der Übung XXX Punkte mehr als dem Test vor der VR Übung.
+	\item Ein Unterricht mit VR Übung wird in Moodle erstellt. Der Lerneffekt ist deutlich. Alle neun Versuchspersonen haben den Test über Infusionsvorbereitung durchschnittlich mit der Note 91 von 100 bestanden. Im Durchschnitt erwarb pro Versuchsperson bei dem Test nach der Übung 22 Punkte mehr als dem Test vor der VR Übung.
 	
-	\item Die VR Übung kann auf PC, Smartphone, Samsung Gear VR und HTC Vive durchgeführt werden. Mit PC, Smartphone und HTC Vive wird Studie gemacht. Durchschnittlich XXX von 5 Punkte geben, wenn die Frage gestellt wird, ob man das Gefühl hat, wirklich eine Infusion vorzubereiten.
+	\item Die VR Übung kann auf PC, Smartphone, Samsung Gear VR und HTC Vive durchgeführt werden. Mit PC, Smartphone und HTC Vive wird Studie gemacht. Durchschnittlich 4,1 von 5 Punkte geben, wenn die Frage gestellt wird, ob man das Gefühl hat, wirklich eine Infusion vorzubereiten.
 	
 	\item Keine Installation oder Aktualisierung der WebVR Applikation wird gefordert. Die WebVR Applikation kann direkt durch das eingegebene URL in Browser aufgerufen werden.
 	
@@ -20,7 +18,7 @@ Im Kapitel Einleitung werden sechs Ziele für das Projekt eingesetzt. Durch die 
 	
 	\item Die Zielobjekte können während der Übung mühelos gefunden werden. Das Whiteboard bietet die Hinweise für den nächsten Schritt, was sehr hilfreich von den Versuchspersonen bewertet wird. Die Feedbacks der Objekte entsprechen die Erwartung der Versuchspersonen.
 	
-	\item Die VR Übung wird durch die Links in dem Unterricht aufgerufen. Und durch das gezeigte Link auf dem Whiteboard in der VR Umgebung können die Versuchspersonen wieder zurück zum Unterricht geleitet werden. XXX Versuchspersonen finden, dass die VR Übung sehr gut mit dem Unterricht verbunden wird.
+	\item Die VR Übung wird durch die Links in dem Unterricht aufgerufen. Und durch das gezeigte Link auf dem Whiteboard in der VR Umgebung können die Versuchspersonen wieder zurück zum Unterricht geleitet werden. Alle Versuchspersonen finden, dass die VR Übung sehr gut mit dem Unterricht verbunden wird.
 	
 \end{enumerate}
 
@@ -31,12 +29,12 @@ Obwohl die Ziele erreicht werden, sollen die Probleme bei der WebVR Applikation 
 
 \subsection{Entwicklung}
 
-Bei dem Frameword A-Frame stehen zurzeit noch nicht viele umfassende built-in Funktionen und stabile Entwicklungsumgebung wie Game Engines (Unity und Unreal Engine), deswegen werden Probleme getroffen während der Entwicklung. 
+Bei dem Framework A-Frame feht es zurzeit noch wichtigen built-in Funktionen und stabiler Entwicklungsumgebung, was von den Game Engines (Unity und Unreal Engine) angeboten wird, deswegen werden Probleme getroffen während der Entwicklung. 
 
 \begin{itemize}
     \item \textbf{Mangel an den built-in Funktionen}: Bei A-Frame fehlt es wichtig Funktionen wie Kollisionserkennung und freier Fall, die von Unity und Unreal Engine als buit-in Funktionen geboten werden. Das führt zu Zeitaufwand und schlechte Qualität der Applikation, wenn keine genügende Zeit zu Verfügung steht.
     
-    \item \textbf{Schlechte Erfahrung bei Debug}: Breakpoint ist ein hilfreiches Debug-Werkzeug für Software Entwicklung. In Browsers wird auch das Breakpoint geboten. Allerdings passt es nicht an der Entwicklung von HTC Vive. Wenn die WebVR Applikation sich durch breakpoint pausiert, wird die VR Umgebung nach der Übersprung des Breakpints nicht mehr in HMD gezeigt, so dass das Debug nur mit der Funktion \glqq console.log() \grqq\ durchgeführt werden kann, was zu Zeitaufwand führt.
+    \item \textbf{Schlechte Erfahrung bei Debug}: Breakpoint ist ein hilfreiches Debug-Werkzeug für Software Entwicklung. In Browser wird auch das Breakpoint geboten. Allerdings passt es nicht an der Entwicklung von HTC Vive. Wenn die WebVR Applikation sich durch breakpoint pausiert, wird die VR Umgebung nach der Übersprung des Breakpints nicht mehr in HMD gezeigt, so dass das Debug nur mit der Funktion \glqq console.log() \grqq\ durchgeführt werden kann, was zu Zeitaufwand führt.
     
 \end{itemize}
 
@@ -47,15 +45,14 @@ Die Installation und Aktualisierung für webbasierte Applikation sind kein Thema
 \begin{itemize}
     \item \textbf{Abhängigkeit von Browsers}: Browsers spielen wichtige Rolle für webbasierten Applikationen. Der Endeffekt der Applikation auf unterschiedlichen Browsers könnte anders sein, deswegen wird die WebVR Applikation für unterschiedlichen Browsers angepasst. Allerdings könnte die Aktualisierung des Browsers zur Änderung des Endeffektes führen. Deshalb soll die VR Übung regelmäßig pflegt werden.
     
-    \item \textbf{Begrenzte Größe der Applikation}: Die ganze WebVR Applikation wird bei jedem Aufruf heruntergeladen, deswegen entscheidet die Größe der Applikation für die Geschwindigkeit, die Applikation zu laden. Auf diesem Grund kann die WebVR Applikation nicht groß sein, was die Qualität der Modells und die Menge der Soundeffekts beschrankt.
+    \item \textbf{Begrenzte Größe der Applikation}: Die ganze WebVR Applikation wird bei jedem Aufruf heruntergeladen, deswegen entscheidet die Größe der Applikation für die Geschwindigkeit, die Applikation zu laden. Auf diesem Grund kann die WebVR Applikation nicht groß sein, was die Qualität der Modell und die Menge der Soundeffekts beschränkt.
 \end{itemize}
 
 \section{Ausblick}
 
 Obwohl wegen der technischen Probleme ist die VR Übung nicht optimal, werden alle Ziele dieses Projektes erreichtet. Außerdem hat die VR Übung laut der Studie sehr guten Lerneffekt.
 
-Zurzeit sind einige Probleme nicht überwindbar. Allerdings werden solchen Problem in der Zukunft wegen der Entwicklung der Infrastruktur (höhere Internet-Geschwindigkeit ) und die WebVR Technik (bessere Werkzeugen) erhoben.
+Zurzeit sind einige Probleme nicht überwindbar. Allerdings werden solchen Problem in der Zukunft wegen der Entwicklung der Infrastruktur (höhere Internet-Geschwindigkeit) und die WebVR Technik (bessere Werkzeugen) erhoben.
 
-Webbasierte Applikation ist die Trend der Entwicklung, und wird schon im Bereich E-Learning weit verbreitet. Als die neue Teile der webbasierte Technik werden WebVR und WebAR auf die höhere Bühne betreten. 
-
+Webbasierte Applikation ist den Trend der Entwicklung, und wird schon im Bereich E-Learning weit verbreitet. Als die neuen Teile der webbasierten Technik werden WebVR und WebAR in mehreren Bereichen eingesetzt.
 
