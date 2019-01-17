@@ -183,7 +183,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
 
  Für jedes Geräte wird von drei Aspekten der Interaktionen erklärt:
  
- \textbf{Exploration}: Änderung des Blickfild.
+ \textbf{Exploration}: Änderung des Perspektive.
  
  \textbf{Navigation}: Translation der Kamera.
  
@@ -267,7 +267,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Der Form des Zeigers ist die gleich wie auf dem Laptop. Da auf einem Smartphone keine Maus zu Verfügung steht, wird die Bestätigung des Zeigers durch \glqq Anstarren\grqq\ (eng. gaze) ausgeführt. Wenn der Zeiger ca. 0,5 Sekunde auf einem Objekt verharrt, wird dadurch die Aktion des jeweiligen Objecktes initiiert.
+  Der Form des Zeigers ist die gleich wie auf dem Laptop. Da auf einem Smartphone keine Maus zu Verfügung steht, wird die Bestätigung des Zeigers durch \glqq Blickbaserte Selektion\grqq\ (eng. gaze) ausgeführt. Wenn der Zeiger ca. 0,5 Sekunde auf einem Objekt verharrt, wird dadurch die Aktion des jeweiligen Objecktes initiiert.
   
  \subsubsection{Samsung Gear VR}
  Samsung Gear VR ist ein gut verbreitetes mobile HMD im Markt. Es ist ein typisch 3Dof HMD. Gear VR kann mit oder ohne Controller benutzt werden.
@@ -318,7 +318,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   
   Die Merkmale der beiden Varianten sind eindeutig. Die Entscheidung wird bei der Implementierung nach der Betrachtung des Endeffekts getroffen.
   
-  Die Bestätigung des Zeigers kann durch den Druck auf das Touchpad der Gear VR oder auch durch \glqq Anstarren\grqq\ wie auf dem Smartphone durchgeführt werden.
+  Die Bestätigung des Zeigers kann durch den Druck auf das Touchpad der Gear VR oder auch durch \glqq Blickbaserte Selektion\grqq\ wie auf dem Smartphone durchgeführt werden.
   
   \vspace{0.5em}
   \noindent
@@ -368,15 +368,15 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
 \end{figure}
   
 \begin{table}[ht]
-\caption{Interaktionen für unterschiedlichen Geräten}
+\caption{Interaktionen für unterschiedlichen Geräte}
 \begin{tabular}{llll}
 \hline
                                                                             & Exploration                                                                                                                                 & Navigation                                                                                                          & Manipulation                                                                                                                                                                                          \\ \hline
 PC                                                                          & \begin{tabular}[c]{@{}l@{}}1.\\ Maus clicken\\ und bewegen\\ 2.\\ Maus clicken\\ dann bewegen\\ (ESC Tasten zu\\ deaktivieren)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Manuell:\\ W,A,S,D Tasten\\ \\ drücken\\ \\ Automaticsch:\\ Objekte anschauen\end{tabular} & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Maus clicken\end{tabular}                                                                                                                                    \\ \hline
-Smartphone                                                                  & \begin{tabular}[c]{@{}l@{}}1. Smartphone\\ bewegen\\ 2. Bildschirm\\ berühren\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Objekt anstarren\end{tabular}                                                                                                                                \\ \hline
-\begin{tabular}[c]{@{}l@{}}Samsung\\ Gear VR\\ ohne Controller\end{tabular} & Kopf bewegen                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ 1.\\ Touchpack clicken\\ 2.\\ Objekt anstarren\end{tabular}                                                                                                  \\ \hline
+Smartphone                                                                  & \begin{tabular}[c]{@{}l@{}}1. Smartphone\\ bewegen\\ 2. Bildschirm\\ berühren\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Objekt blickbasert selektieren\end{tabular}                                                                                                                                \\ \hline
+\begin{tabular}[c]{@{}l@{}}Samsung\\ Gear VR\\ ohne Controller\end{tabular} & Kopf bewegen                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ 1.\\ Touchpack clicken\\ 2.\\ Objekt blickbasiert selektieren\end{tabular}                                                                                                  \\ \hline
 \begin{tabular}[c]{@{}l@{}}Samsung\\ Gear VR\\ mit Controller\end{tabular}  & Kopf bewegen                                                                                                                                & Trackpad clicken                                                                                                    & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Hair-Trigger clicken\end{tabular}                                                                                                                                \\ \hline
-HTC Vive                                                                    & Kopf bewegen                                                                                                                                & Trackpad clicken                                                                                                    & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Hair-Trigger betätigen\\ \\ Greifen:\\ Hair-Trigger drücken\\ \\ Befreien:\\ Hair-Trigger loslösen\\ \\ Überprüfen:\\ Objekt anstarren\\ und Hair-Trigger clicken\end{tabular} \\ \hline
+HTC Vive                                                                    & Kopf bewegen                                                                                                                                & Trackpad clicken                                                                                                    & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Hair-Trigger betätigen\\ \\ Greifen:\\ Hair-Trigger drücken\\ \\ Befreien:\\ Hair-Trigger loslösen\\ \\ Überprüfen:\\ Objekt blickbasiert selektieren\\ und Hair-Trigger clicken\end{tabular} \\ \hline
 \end{tabular}
 \label{tab:Interaktionen}
 \end{table}
@@ -452,7 +452,7 @@ HTC Vive                                                                    & Ko
 \end{figure}
   
   \subsubsection{Erkennung \& Feedback der Fortschritte}
-  Der Fortschritt des Prozesses der Übung wird durch die Durchführung einer richtigen Aktivität gefördert. Wenn eine Aktion des Objektes zur richtigen Zeit durchgeführt wird, wird der Fortschritt erkannt. Die Erkennungen müssen durch die oben genannten Interaktionen nämlich Manipulationen der VR Geräten bewältigt wird. % TODO hier verstehe ich leider nicht, was du meinst :/
+  Der Prozess in der Übung schreitet durch die Durchführung einer richtigen Aktivität voran. Wenn eine Aktion des Objektes zur richtigen Zeit durchgeführt wird, wird der Fortschritt erkannt. Die Erkennungen müssen durch die oben genannten Interaktionen nämlich Manipulationen der VR Geräten bewältigt werden.
   
   Auf dem PC, einem Smartphone und der Gear VR führt eine geeignete Manipulation zu einem Fortschritt. Allerdings ist es bei der HTC Vive anders, weil die 6 DoF Geräte mehr Freiheit bezüglich der Interaktion haben. Zum Beispiel führt das Aufheben eines gefallenen Objektes dzu keinem Fortschritt in der Übung. 
   
@@ -473,7 +473,7 @@ HTC Vive                                                                    & Ko
       
       Eine davon ist, die Position zu kennzeichnen, wohin das Objekt gelegt werden soll.
       
-      Die andere Funktion ist, die Zustände des genommenen Objektes zu zeigen. Wenn ein Objekt gerade in die Hand genommen wird, wird die Hinweis-Box dafür in rot dargestellt. Wenn alle Aufgaben, z.B Überprüfung, zu diesem Objekt erledigt sind, wird die Farbe des Objektes zu grün gewechselt, um den Benutzer zu informieren, dass das Objekt hingelegt werden darf. Wenn das Objekt in der entsprechenden grünen Hinweis-Box hingelegt wird, verschwindet die Hilf-Box und die Position des Objektes wird angepasst. Es gilt, dass das Objekt nicht in die Hinweis-Box positioniert wird, ein Objekt in einer roten Hinweis-Box hinzulegen. (Tabelle ~\ref{tab:HinweisBox}) %TODO da weiß ich auch nicht was du genau meinst :(
+      Die andere Funktion ist, die Zustände des genommenen Objektes zu zeigen. Wenn ein Objekt gerade in die Hand genommen wird, wird die Hinweis-Box dafür in rot dargestellt. Wenn alle Aufgaben, z.B Überprüfung, zu diesem Objekt erledigt sind, wird die Farbe des Objektes zu grün gewechselt, um den Benutzer zu informieren, dass das Objekt hingelegt werden darf. Wenn das Objekt in der entsprechenden grünen Hinweis-Box hingelegt wird, verschwindet die Hilf-Box und die Position des Objektes wird angepasst. Es gilt, dass das Objekt nicht in die Hinweis-Box positioniert werden kann, wenn die Hinweis-Box rot ist. (Tabelle ~\ref{tab:HinweisBox})
       
       \item \textbf{30 Sekunden Indikator}:
       

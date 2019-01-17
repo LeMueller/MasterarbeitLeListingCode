@@ -124,7 +124,6 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
   \subsubsection{Beobachter (en. Observer Pattern)}
   Beobachter ist ein Entwurfsmuster (en. Design Pattern) aus dem Bereich Softwareentwicklung. Es ist dafür geeignet, um das Zustandsmanagement zu implementieren.
   
-  %TODO: ist es so richtig(Zum Beispiel von Linus Torvalds)? (von Le)
   Die Funktionalität davon ist ähnlich wie der Mechanismus von Twitter. Zum Beispiel Linus Torvalds \citep{42} von der Socialmediaplattform Twitter, die es seit 2012 gibt und wo Nutzer einen Account anlegen und anderen Nutzern \glqq folgen \grqq\ können. Bei Posts einer gefolgten Person werden die \glqq Folgenden \grqq\ benachrichtigt. (Abbildung ~\ref{fig:observerPatern})
   
   Im Bereich Softwareentwicklung wird der Gefolgten als \glqq Observable\grqq oder \glqq Subject\grqq bezeichnet. Die Folgenden werden als \glqq Observer\grqq bezeichnet. Die Aktivität \glqq follow\grqq ist \glqq Subscribe\grqq. Die Benachrichtigung heißt \glqq Notify\grqq.
@@ -170,9 +169,8 @@ export default class Observable {
   \subsubsection{Zustände Management}
   
   Um das Zustandsmanagement zu realisieren, wird ein Klasse {\fontfamily{qcr}\selectfont stateIndex} geschrieben. Da fast alle Objekt in der Szene mit dieser Klasse verbunden sind und den einzigen \glqq state container\grqq referenzieren, wird die Klasse als \glqq static\grqq Klasse definiert.
-  
-  %TODO: ist es so richtig(static zu erklären)? (von Le)
-  Die \glqq static\grqq\ Klasse hat keine Entität. Die zugehörigen Funktionen werden direkt durch die Klasse aufgerufen. Da es kein \glqq static\grqq\ Klasse in JavaScript gibt, gilt die Klasse, deren allen zugehörigen Attributen und Funktionen \glqq static\grqq\ sind, als \glqq static\grqq Klasse.
+
+  Die \glqq static\grqq\ Klasse hat keine Entität. Die zugehörigen Funktionen werden direkt durch die Klasse aufgerufen. Da es keine \glqq static\grqq\ Klasse in JavaScript gibt, gilt die Klasse, deren allen zugehörigen Attributen und Funktionen \glqq static\grqq\ sind, als \glqq static\grqq Klasse.
   
   Mit der Funktion {\fontfamily{qcr}\selectfont init}  werden alle Zustände initialisiert. Die Initialisierung liegt an dem Query string in URL (Abbildung ~\ref{fig:queryString}). Der Query string ist ein Teil von URL, wodurch der Parameter bei dem \glqq request\grqq zusammen an den Server geschickt wird. Bei dieser Applikation ist der Query string die Ziffer des ausgewählten Abschnitts. Mit dem Query string werden die Zustände nach dem ausgewählten Abschnitt initialisiert.
   
@@ -390,9 +388,7 @@ export function handleNotify(event) {
   \noindent
   Mit dem Component {\fontfamily{qcr}\selectfont wasd-controls} kann die Position einer Entität manipuliert werden. Die Nutzung ist ähnlich wie das Component {\fontfamily{qcr}\selectfont look-controls}. Wenn {\fontfamily{qcr}\selectfont wasd-controls} als Attribut von {\fontfamily{qcr}\selectfont a-camera} eingesetzt wird, wird die Position der Kamera mit den Tasten W, A, S und D auf der Tastatur manipuliert.
   
-  %TODO: acceleration ist eigentlich Beschleunigung. Velocity ist die Geschwindigkeit im englischen
-  %eigentlich das ist Geschwindigkeit. Aber in Doc von A-Frame wird es acceleration genannt. (von Le)
-  Die Eigenschaft {\fontfamily{qcr}\selectfont acceleration} beschreibt die Geschwindigkeit der Bewegung, wenn die Teste gedrückt ist. Um Schwindel zu vermeiden, wird der Wert ziemlich klein eingerichtet.
+  Die Eigenschaft {\fontfamily{qcr}\selectfont acceleration} beschreibt die Beschleunigung, wenn die Teste gedrückt ist. Dabei wird aber nur für einen Moment beschleunigt, daraufhin bleibt die Geschwindigkeit konstant. Um Schwindel zu vermeiden, wird der Wert ziemlich klein eingerichtet.
   
   Es gibt noch einen Bug bei dem Component {\fontfamily{qcr}\selectfont wasd-controls}. Die manuelle Navigation kann mit Firefox richtig durchgeführt werden, aber mit Chrome kann die Bewegung nicht beendet werden.
   
@@ -885,10 +881,8 @@ export function detectCollision(elementObject, elementTarget) {
   
   image: Formel Geschwindigkeit V(t) = gt, g = 9.8 .........
   
-  kann die Geschwindigkeit so errechnet {\fontfamily{qcr}\selectfont speed = speed + accelerate} werden. 
-  %TODO 9.8 ist die Erdbeschleunigung und wird in m/s^2 eig angegeben
-  %TODO: nicht ganz klar (von Le)
-  Da das reale Erdbeschleunigung ist 9.8 m/s, soll die konstante Wert {\fontfamily{qcr}\selectfont accelerate} 0.098 sein. Aber in der simulierten VR Umgebung fällt das Objekt zu schnell, sodass das Fallen nicht deutlich gemerkt werden kann. Um bessere Benutzererfahrung zu implementieren, wird die Wert {\fontfamily{qcr}\selectfont accelerate} als 0.049 befestigt.
+  kann die Geschwindigkeit so errechnet {\fontfamily{qcr}\selectfont speed = speed + accelerate} werden.
+  Da die reale Erdbeschleunigung 9.8 m/s² ist, soll die konstante Wert {\fontfamily{qcr}\selectfont accelerate} 0.098 sein. Aber in der simulierten VR Umgebung fällt das Objekt zu schnell, sodass das Fallen nicht deutlich gemerkt werden kann. Um bessere Benutzererfahrung zu implementieren, wird die Wert {\fontfamily{qcr}\selectfont accelerate} als 0.049 befestigt.
   
   Um den passende Zeitpunkt zu finden, das Fallen zu beenden, wird jede 0.01 Millisekunde die Kollision auf Y-Achse detektiert. Allerdings könnte es passieren, dass vor der Detektion das Objekt in der letzten 0.01 Millisekunde schon in anderem Objekt, beispielsweise in den Boden, gefallen ist. Wenn das Objekt sehr dünn ist, z.B. Namenetikett, wird es nicht mehr gesehen.
   
@@ -953,7 +947,7 @@ export function getWorldBound(element) {
 
 \begin{table}
 \centering
-\caption{Anpassung der Geräten}
+\caption{Anpassung der Geräte}
 \label{tab:geraeteAnpassen}
 \begin{tabular}{|l|l|l|l|l|l|} 
 \toprule
