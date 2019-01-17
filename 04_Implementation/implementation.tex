@@ -25,6 +25,7 @@ Viele LMS werden auf dem Markt angeboten. Eine geeignete Plattform für das Proj
  
 \begin{figure}[ht]
 \centering
+\vspace{1em}
 \caption{Unterricht über Infusionsvorbereitung auf Moodle}
 \includegraphics[width=\textwidth]{images/unterricht.png}
 \label{fig:unterricht}
@@ -879,8 +880,9 @@ export function detectCollision(elementObject, elementTarget) {
   
   Das Fallen wird so simuliert, dass in jedem bestimmten Zeitraum (z.B. 0.01 Millisekunde) die Position auf der Y-Achse des Objektes eine Geschwindigkeit reduziert wird. Laut der Formel der Geschwindigkeit des freien Falls 
   
-  image: Formel Geschwindigkeit V(t) = gt, g = 9.8 .........
+  \[ V(t) = gt, g = 9.8 \]
   
+  \noindent
   kann die Geschwindigkeit so errechnet {\fontfamily{qcr}\selectfont speed = speed + accelerate} werden.
   Da die reale Erdbeschleunigung 9.8 m/s² ist, soll die konstante Wert {\fontfamily{qcr}\selectfont accelerate} 0.098 sein. Aber in der simulierten VR Umgebung fällt das Objekt zu schnell, sodass das Fallen nicht deutlich gemerkt werden kann. Um bessere Benutzererfahrung zu implementieren, wird die Wert {\fontfamily{qcr}\selectfont accelerate} als 0.049 befestigt.
   
@@ -935,7 +937,7 @@ export function getWorldBound(element) {
  \subsection{Geräte anpassen}
  Anpassende Interaktionen werden für unterschiedliche Geräte gestaltet und implementiert. Um die Szene lebhafter darzustellen, die Interaktion barrierefrei durchzuführen und die falsche Initialisierung der Position der Kamera (Bug von A-Frame) zu beheben, muss die Applikation für die unterschiedlichen Geräte während des Ladens konfiguriert werden.
  
- Durch die Funktion {\fontfamily{qcr}\selectfont navigator.userAgent} wird die Informationen über den Browser ausgelesen. Dadurch werden die Typen der Geräten (PC, Smartphone, GearVR) unterschieden. Durch das Event {\fontfamily{qcr}\selectfont gamepadconnected} wird der verbundene Controller (GearVR Controller, Vive Controller) erkannt. Damit wird die Mode auf dem PC (flach, VR) und Gear VR (ohne Controller, mit Controller) unterschieden. Durch das Event {\fontfamily{qcr}\selectfont enter-vr} wird die Mode auf Smartphone (flach, Cardboard) unterschieden. (Abbildung ~\ref{fig:geraeteAnpassen} \& Tabelle ~\ref{tab:geraeteAnpassen}) 
+ Durch die Funktion {\fontfamily{qcr}\selectfont navigator.userAgent} wird die Informationen über den Browser ausgelesen. Dadurch werden die Typen der Geräten (PC, Smartphone, Gear VR) unterschieden. Durch das Event {\fontfamily{qcr}\selectfont gamepadconnected} wird der verbundene Controller (Gear VR Controller, Vive Controller) erkannt. Damit wird die Mode auf dem PC (flach, VR) und Gear VR (ohne Controller, mit Controller) unterschieden. Durch das Event {\fontfamily{qcr}\selectfont enter-vr} wird die Mode auf Smartphone (flach, Cardboard) unterschieden. (Abbildung ~\ref{fig:geraeteAnpassen} \& Tabelle ~\ref{tab:geraeteAnpassen}) 
  
 \begin{figure}[ht]
 \vspace*{1em}

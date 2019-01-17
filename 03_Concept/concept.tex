@@ -38,7 +38,7 @@ Laut der Forschung ist die Lernmethode entscheidend für den Lerneffekt. WebVR T
 \begin{figure}[ht]
 \vspace*{1em}
 \centering
-\caption{Moodle}
+\caption{LMS (Moodle)}
 \includegraphics[width=\textwidth]{images/moodleBeispiel.png}
 \label{fig:moodleBeispiel} 
 \end{figure}
@@ -148,7 +148,7 @@ Als Schwerpunkt des Projektes wird die Konzeption der Übungsvorbereitung einer 
 In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun anstelle einer Mülleimers, ein Kanülen-Sammler in der vurtuellen Umgebung zur Verfügung steht.
 
    \subsubsection{Entfernung der Text-Leiste}
-   Bei der Version aus dem Jahre 2016 wurde für das Feedback eine schwarze Text-Leiste am unteren Sichtfeld des Nutzers positioniert. (Abbildung ~\ref{fig:Schritt_4_2}) Feedback kam dabei in Form von Text, also Hinweisen, und gegebenenfalls mit entsprechenden Icons (dass der Nutzer beispielsweise im Besitz eines Desinfektionstuchs ist). Bei der Evaluation stellte sich heraus, dass die Hinweise nicht gut gelesen werden konnten, weil die Leiste etwas zu niedrig positioniert worden war. Eine höhere Positionierung der Text-Leiste hätte hingegen eine zu große Einschränkung des Sichtfeldes mit sich gebracht.
+   Bei der Version aus dem Jahre 2016 wurde für das Feedback eine schwarze Text-Leiste am unteren Sichtfeld des Nutzers positioniert (Abbildung ~\ref{fig:Schritt_4_2}). Feedback kam dabei in Form von Text, also Hinweisen, und gegebenenfalls mit entsprechenden Icons (dass der Nutzer beispielsweise im Besitz eines Desinfektionstuchs ist). Bei der Evaluation stellte sich heraus, dass die Hinweise nicht gut gelesen werden konnten, weil die Leiste etwas zu niedrig positioniert worden war. Eine höhere Positionierung der Text-Leiste hätte hingegen eine zu große Einschränkung des Sichtfeldes mit sich gebracht.
    
    Um die Text-Leiste \glqq verlustfrei\grqq\ (keine der Aufgaben, die die Leiste übernommen hat, soll vernachlässigt werden) zu entfernen, müssen erst die Aufgaben spezifiziert werden, die sie übernommen hat, sodass diese Aufgaben andere Bereiche übernehmen können und somit kein Verlust an Feedback entsteht. Insgesamt werden drei Aufgaben ermittelt:
    
@@ -175,7 +175,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
    Die Modelle der Händen sollen sich je nach der Aktion der Controller in ihrer Haltung verändern. Wenn der Hair-Trigger gedrückt wird, soll die entsprechende Hand leicht zu einer Faust geballt werden. Wenn der Hair-Trigger hingegen losgelassen wird, soll die Faust wieder gelöst werden.
 
  \subsection{Interaktion}
- Interaktion ist ein wichtiger Teil der WebVR Applikation, weil die nicht nur die Implementierung von \glqq Interactability\grqq ist, sondern auch enge Beziehung mit \glqq Matching\grqq hat.
+ Interaktion ist ein wichtiger Teil der WebVR Applikation, weil die nicht nur die Implementierung von \glqq Interactability\grqq\ ist, sondern auch enge Beziehung mit \glqq Matching\grqq\ hat.
  
  Um bessere Benutzererfahrung zu haben, soll die Interaktionen auf der einen Seite die Merkmale der unterschiedlichen Geräte möglichst geeignet und in voller Ausprägung benutzen, auf der anderen Seite nicht zu vielfältig sein, sodass der Fokus nicht auf dem Lernen der Interaktion bzw dem Händeln des Geräts liegt. 
  
@@ -183,7 +183,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
 
  Für jedes Geräte wird von drei Aspekten der Interaktionen erklärt:
  
- \textbf{Exploration}: Änderung des Perspektive.
+ \textbf{Exploration}: Änderung der Perspektive.
  
  \textbf{Navigation}: Translation der Kamera.
  
@@ -224,7 +224,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Die Manipulation wird mit dem Zeiger ausgeführt. Der Zeiger ist ein schwarzer Ring, der immer in der Mittel der Sicht der Kamera steht. Der ist zuständig für den Aufruf einer möglichen Aktion eines Objekts, auf das dieser zeigt.
+  Die Manipulation wird mit dem Zeiger ausgeführt (blickbasierte Selektion). Der Zeiger ist ein schwarzer Ring, der immer in der Mittel der Sicht der Kamera steht. Der ist zuständig für den Aufruf einer möglichen Aktion eines Objekts, auf das dieser zeigt.
   
   Wenn der Benutzer mit dem nächsten Objekt hinter dem Zeiger interagieren kann, wechselt die Farbe des Rings zu grün, um dem Nutzer so zu symbolisieren, dass eine Aktion möglicht ist. Allerdings bedeutet der grüne Zeiger nicht, dass die Aktion des Objekts die korrekte ist. Die Übung wird in einer bestimmtem Reihenfolge durchgeführt, wenn eine Aktion eigentlich noch nicht dran ist, gilt das Auslösen dieser Aktion als Fehler.
   
@@ -259,7 +259,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Das Smartphone bietet nur 3DoF Erkennung, nämlich Rotation. Deswegen kann die Translation der Kamera nicht mit der Translation des Smartphones verbunden werden. Um ein Objekt genauer anzuschauen und Interaktion zu vereinfachen, wird eine automatische Navigation wie auf dem Laptop angeboten.
+  Das Smartphone bietet nur 3 DoF Erkennung, nämlich Rotation. Deswegen kann die Translation der Kamera nicht mit der Translation des Smartphones verbunden werden. Um ein Objekt genauer anzuschauen und Interaktion zu vereinfachen, wird eine automatische Navigation wie auf dem Laptop angeboten.
   
   \vspace{1em}
   \noindent
@@ -267,10 +267,10 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Der Form des Zeigers ist die gleich wie auf dem Laptop. Da auf einem Smartphone keine Maus zu Verfügung steht, wird die Bestätigung des Zeigers durch \glqq Blickbaserte Selektion\grqq\ (eng. gaze) ausgeführt. Wenn der Zeiger ca. 0,5 Sekunde auf einem Objekt verharrt, wird dadurch die Aktion des jeweiligen Objecktes initiiert.
+  Der Form des Zeigers ist die gleich wie auf dem Laptop. Da auf einem Smartphone keine Maus zu Verfügung steht, wird die Bestätigung des Zeigers durch \glqq blickbasierte Selektion\grqq\ (eng. gaze) ausgeführt. Wenn der Zeiger ca. 0,5 Sekunde auf einem Objekt verharrt, wird dadurch die Aktion des jeweiligen Objecktes initiiert.
   
  \subsubsection{Samsung Gear VR}
- Samsung Gear VR ist ein gut verbreitetes mobile HMD im Markt. Es ist ein typisch 3Dof HMD. Gear VR kann mit oder ohne Controller benutzt werden.
+ Samsung Gear VR ist ein gut verbreitetes mobile HMD im Markt. Es ist ein typisch 3 Dof HMD. Gear VR kann mit oder ohne Controller benutzt werden.
  
   \vspace{1em}
   \noindent
@@ -278,7 +278,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Durch Gear VR wird der Benutzer in dem simulierten virtuellen Raum hineinversetzt. Die Exploration wird durch der Rotation des Kopfes durchgeführt, ähnlich wie im realen Leben. Allerdings wird nur Rotation von HMD erkannt, weil Gear VR 3DoF ist.
+  Durch Gear VR wird der Benutzer in dem simulierten virtuellen Raum hineinversetzt. Die Exploration wird durch der Rotation des Kopfes durchgeführt, ähnlich wie im realen Leben. Allerdings wird nur Rotation von HMD erkannt, weil Gear VR 3 DoF ist.
   
   \vspace{1em}
   \noindent
@@ -298,7 +298,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{0.5em}
   
   \noindent
-  Der Gear VR Controller ist ein 3DoF Controller, dass nur die Rotation erkannt wird. Es soll eine Kurve aus dem Controller ausstrahlen, die auf dem Boden landen soll, wenn das Trackpad gedrückt wird. Dort wird als der Zielort gezeichnet. Wenn den Tranlation Befehl durch der Loslösung auf dem Trackpad auf dem Gear VR Controller gesendet, soll die Kamera sich zu der gezeichneten Position navigieren. (Abbildung ~\ref{fig:gearViveController})
+  Der Gear VR Controller ist ein 3 DoF Controller, dass nur die Rotation erkannt wird. Es soll eine Kurve aus dem Controller ausstrahlen, die auf dem Boden landen soll, wenn das Trackpad gedrückt wird. Dort wird als der Zielort gezeichnet. Wenn den Tranlation Befehl durch der Loslösung auf dem Trackpad auf dem Gear VR Controller gesendet, soll die Kamera sich zu der gezeichneten Position navigieren. (Abbildung ~\ref{fig:gearViveController})
 
   \vspace{1em}
   \noindent
@@ -318,7 +318,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   
   Die Merkmale der beiden Varianten sind eindeutig. Die Entscheidung wird bei der Implementierung nach der Betrachtung des Endeffekts getroffen.
   
-  Die Bestätigung des Zeigers kann durch den Druck auf das Touchpad der Gear VR oder auch durch \glqq Blickbaserte Selektion\grqq\ wie auf dem Smartphone durchgeführt werden.
+  Die Bestätigung des Zeigers kann durch den Druck auf das Touchpad der Gear VR oder auch durch \glqq blickbasierte Selektion\grqq\ wie auf dem Smartphone durchgeführt werden.
   
   \vspace{0.5em}
   \noindent
@@ -329,7 +329,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   Ein Raycaster soll aus dem Controller ausstrahlen. Durch Betätigun des Hair-Triggers des Controllers wird versucht, die Aktion des getroffenen Objekts zu aktivieren.
   
  \subsubsection{HTC Vive}
- HTC Vive ist ein 6DoF HMD mit starker Leistung. Eine Vive wird mit einem PC verbunden. Die WebVR Applikation kann durch normale Browser wie Firefox aufgerufen und die VR Umgebung wird zeitgleich an das HMD geschickt.
+ HTC Vive ist ein 6 DoF HMD mit starker Leistung. Eine Vive wird mit einem PC verbunden. Die WebVR Applikation kann durch normale Browser wie Firefox aufgerufen und die VR Umgebung wird zeitgleich an das HMD geschickt.
  
   \vspace{1em}
   \noindent
@@ -337,7 +337,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
   \vspace{1em}
   
   \noindent
-  Wie mit der Gear VR wird die Bewegung des Aspekts auch durch die Bewegung des Kopfs durchgeführt. Da HTC Vive 6DoF hat, werden nicht nur die Rotation sondern auch die Translation erkannt. Somit ist die HTC Vive in der Lage, die Bewegung des Kopfs in der VR Umgebung vollständig zu simulieren.
+  Wie mit der Gear VR wird die Bewegung des Aspekts auch durch die Bewegung des Kopfs durchgeführt. Da HTC Vive 6 DoF hat, werden nicht nur die Rotation sondern auch die Translation erkannt. Somit ist die HTC Vive in der Lage, die Bewegung des Kopfs in der VR Umgebung vollständig zu simulieren.
   
   \vspace{1em}
   \noindent
@@ -373,7 +373,7 @@ In diesem Projekt wurde die fehlerhafte Modellierung ausgebessert, sodass nun an
 \hline
                                                                             & Exploration                                                                                                                                 & Navigation                                                                                                          & Manipulation                                                                                                                                                                                          \\ \hline
 PC                                                                          & \begin{tabular}[c]{@{}l@{}}1.\\ Maus clicken\\ und bewegen\\ 2.\\ Maus clicken\\ dann bewegen\\ (ESC Tasten zu\\ deaktivieren)\end{tabular} & \begin{tabular}[c]{@{}l@{}}Manuell:\\ W,A,S,D Tasten\\ \\ drücken\\ \\ Automaticsch:\\ Objekte anschauen\end{tabular} & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Maus clicken\end{tabular}                                                                                                                                    \\ \hline
-Smartphone                                                                  & \begin{tabular}[c]{@{}l@{}}1. Smartphone\\ bewegen\\ 2. Bildschirm\\ berühren\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Objekt blickbasert selektieren\end{tabular}                                                                                                                                \\ \hline
+Smartphone                                                                  & \begin{tabular}[c]{@{}l@{}}1. Smartphone\\ bewegen\\ 2. Bildschirm\\ berühren\end{tabular}                                                  & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Objekt blickbasiert selektieren\end{tabular}                                                                                                                                \\ \hline
 \begin{tabular}[c]{@{}l@{}}Samsung\\ Gear VR\\ ohne Controller\end{tabular} & Kopf bewegen                                                                                                                                & \begin{tabular}[c]{@{}l@{}}Automatisch:\\ Objekt anschauen\end{tabular}                                             & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ 1.\\ Touchpack clicken\\ 2.\\ Objekt blickbasiert selektieren\end{tabular}                                                                                                  \\ \hline
 \begin{tabular}[c]{@{}l@{}}Samsung\\ Gear VR\\ mit Controller\end{tabular}  & Kopf bewegen                                                                                                                                & Trackpad clicken                                                                                                    & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Hair-Trigger clicken\end{tabular}                                                                                                                                \\ \hline
 HTC Vive                                                                    & Kopf bewegen                                                                                                                                & Trackpad clicken                                                                                                    & \begin{tabular}[c]{@{}l@{}}Aktivieren:\\ Hair-Trigger betätigen\\ \\ Greifen:\\ Hair-Trigger drücken\\ \\ Befreien:\\ Hair-Trigger loslösen\\ \\ Überprüfen:\\ Objekt blickbasiert selektieren\\ und Hair-Trigger clicken\end{tabular} \\ \hline
