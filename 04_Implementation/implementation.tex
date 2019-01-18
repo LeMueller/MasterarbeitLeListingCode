@@ -111,7 +111,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
  \subsection{Zustände Management für Fortschritte}
  Im Kapitel Konzeption werden die Erkennung und Feedback Fortschritte thematisiert. In diesem Kapitel wird erklärt, wie die Fortschritte in der Applikation implementiert werden.
  
- Um die Fortschritte zu definieren, wird die Konzeption \glqq state container\grqq von der Technik Redux importiert. Jedes Objekt in der VR Szene hat einen eigenen Zustand, zum Beispiel Position. Die betreffenden Zustände werden geändert, wenn der Prozess der Applikation betrieben wird. Die Sammlung der Zustände der ganzen Objekten wird als \glqq state container\grqq bezeichnet. Durch die Kombination der Zustände wird der Fortschritt der Übung notiert.
+ Um die Fortschritte zu definieren, wird die Konzeption \glqq state container\grqq\ von der Technik Redux importiert. Jedes Objekt in der VR Szene hat einen eigenen Zustand, zum Beispiel Position. Die betreffenden Zustände werden geändert, wenn der Prozess der Applikation betrieben wird. Die Sammlung der Zustände der ganzen Objekten wird als \glqq state container\grqq\ bezeichnet. Durch die Kombination der Zustände wird der Fortschritt der Übung notiert.
  
  Wenn eine Aktivität auf dem Objekt durchgeführt wird, wird zuerst die Interaktion auf einem Objekt erkannt. Danach werden die betroffenen Zustände geändert. Laut der Änderung der Zustände wird die entsprechende Aktivität des Objektes durchgeführt, was als Feedback an dem Benutzer geht. (Abbildung ~\ref{fig:interaktionVerlauf})
  
@@ -122,12 +122,12 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
 \label{fig:interaktionVerlauf} 
 \end{figure}
  
-  \subsubsection{Beobachter (en. Observer Pattern)}
-  Beobachter ist ein Entwurfsmuster (en. Design Pattern) aus dem Bereich Softwareentwicklung. Es ist dafür geeignet, um das Zustandsmanagement zu implementieren.
+  \subsubsection{Beobachter (engl. Observer Pattern)}
+  Beobachter ist ein Entwurfsmuster (engl. Design Pattern) aus dem Bereich Softwareentwicklung. Es ist dafür geeignet, um das Zustandsmanagement zu implementieren.
   
-  Die Funktionalität davon ist ähnlich wie der Mechanismus von Twitter. Zum Beispiel Linus Torvalds \citep{42} von der Socialmediaplattform Twitter, die es seit 2012 gibt und wo Nutzer einen Account anlegen und anderen Nutzern \glqq folgen \grqq\ können. Bei Posts einer gefolgten Person werden die \glqq Folgenden \grqq\ benachrichtigt. (Abbildung ~\ref{fig:observerPatern})
+  Die Funktionalität davon ist ähnlich wie der Mechanismus von Twitter. Zum Beispiel Linus Torvalds \citep{42} von der Socialmediaplattform Twitter, die es seit 2012 gibt und wo Nutzer einen Account anlegen und anderen Nutzern \glqq folgen\grqq\ können. Bei Posts einer gefolgten Person werden die \glqq Folgenden\grqq\ benachrichtigt. (Abbildung ~\ref{fig:observerPatern})
   
-  Im Bereich Softwareentwicklung wird der Gefolgten als \glqq Observable\grqq oder \glqq Subject\grqq bezeichnet. Die Folgenden werden als \glqq Observer\grqq bezeichnet. Die Aktivität \glqq follow\grqq ist \glqq Subscribe\grqq. Die Benachrichtigung heißt \glqq Notify\grqq.
+  Im Bereich Softwareentwicklung wird der Gefolgten als \glqq Observable\grqq\ oder \glqq Subject\grqq\ bezeichnet. Die Folgenden werden als \glqq Observer\grqq\ bezeichnet. Die Aktivität \glqq follow\grqq\ ist \glqq Subscribe\grqq\. Die Benachrichtigung heißt \glqq Notify\grqq.
   
 \begin{figure}[ht]
 \centering
@@ -222,7 +222,7 @@ export default class stateIndex {
                 if (
                     document.querySelector('#nacl500Bottle')
                     && document.querySelector('#nacl500Cap')
-                    && // other objects
+                    && // other objects here ...
                 ) {
                     this.selectSection(selectedSection);
                     window.clearInterval(setSectionStillElementsLoaded);
@@ -276,7 +276,7 @@ export default class stateIndex {
  
  Allerdings muss die Struktur von Component wegen der Nutzung von Observer Pattern neu gestaltet werden.
  
- Der Code der Klasse {\fontfamily{qcr}\selectfont Observable} hat gezeigt, dass die Parameter der Funktion {\fontfamily{qcr}\selectfont subscribe} eine Funktion sein sollen. Aber die Funktionen, die in der Klasse definiert werden, gelten nicht als eine bestimmte Funktion bei JavaScript. Deshalb müssen die Funktionen, die als \glqq observer\grqq benutzt werden, außerhalb der Klasse definiert werden, sodass die Entitäten der Klasse die Nachrichten von \glqq observable\grqq\ empfangen können. Das führt zu einer suboptimalen Situation, dass alle Entität, die durch die gleiche Klasse erstellt werden, dieselben Funktionen und Eigenschaften benutzen. (Abbildung ~\ref{fig:eigenesClass})
+ Der Code der Klasse {\fontfamily{qcr}\selectfont Observable} hat gezeigt, dass die Parameter der Funktion {\fontfamily{qcr}\selectfont subscribe} eine Funktion sein sollen. Aber die Funktionen, die in der Klasse definiert werden, gelten nicht als eine bestimmte Funktion bei JavaScript. Deshalb müssen die Funktionen, die als \glqq observer\grqq\ benutzt werden, außerhalb der Klasse definiert werden, sodass die Entitäten der Klasse die Nachrichten von \glqq observable\grqq\ empfangen können. Das führt zu einer suboptimalen Situation, dass alle Entität, die durch die gleiche Klasse erstellt werden, dieselben Funktionen und Eigenschaften benutzen. (Abbildung ~\ref{fig:eigenesClass})
  
  Obwohl die Struktur der Klasse sich der Philosophie von A-Frame nicht anpasst, ist es praktisch und geeignet für dieses Projekt, weil fast alle Klassen nur eine einzige Entität in der Szene haben.
  
@@ -354,7 +354,7 @@ export default AFRAME.registerComponent('class', {
 });
 export function handleNotify(event) {
     elements.forEach((element) => {
-        element.trigger('getNewSatete', event);
+        element.trigger('getNewState', event);
     });
 }
 \end{lstlisting}
@@ -379,7 +379,7 @@ export function handleNotify(event) {
   
   Wenn die Eigenschaft {\fontfamily{qcr}\selectfont pointerLockEnabled} von {\fontfamily{qcr}\selectfont look-controls}  als {\fontfamily{qcr}\selectfont true} eingerichtet wird, wird der Zeiger auf PC durch einen Klick auf die Maus versteckt, und die Kamera wird durch die Bewegung der Maus gedreht. Wenn die ESC Taste auf der Tastatur gedrückt wird, wird der Zeiger wieder gezeigt, und die Maus verliert die Kontrolle über die Rotation der Kamera.
   
-  Außerdem ist es möglich, durch das Ziehen auf dem Smartphone die Kamera zu drehen, wenn die Eigenschaft {\fontfamily{qcr}\selectfont touchEnabled} als {\fontfamily{qcr}\selectfont true} konfiguriert ist. {\fontfamily{qcr}\selectfont true} ist die Standardeinstellung für{\fontfamily{qcr}\selectfont touchEnabled}, deswegen muss das Attribut nicht extra eingerichtet werden.
+  Außerdem ist es möglich, durch das Ziehen auf dem Smartphone die Kamera zu drehen, wenn die Eigenschaft {\fontfamily{qcr}\selectfont touchEnabled} als {\fontfamily{qcr}\selectfont true} konfiguriert ist. {\fontfamily{qcr}\selectfont true} ist die Standardeinstellung für {\fontfamily{qcr}\selectfont touchEnabled}, deswegen muss das Attribut nicht extra eingerichtet werden.
   
   \vspace{1em}
   \noindent
@@ -594,7 +594,7 @@ export default AFRAME.registerComponent('cursor-submit', {
   
   Das Element von Gear VR Controller wird mit dem Element der Kamera zusammen in dem Element mit ID {\fontfamily{qcr}\selectfont cameraRig} eingepackt. Die Bewegung der Kamera wird durch die Translation von {\fontfamily{qcr}\selectfont cameraRig} ermöglicht, sodass die relative Position zwischen der Kamera und dem Controller während der Bewegung behalten wird.
   
-  Mit dem built-in Component {\fontfamily{qcr}\selectfont teleport-controls} wird die Navigation implementiert. Das Attribut{\fontfamily{qcr}\selectfont cameraRig} beschreibt das Element, das sich zu der bezeichneten Position bewegt. Das Attribut {\fontfamily{qcr}\selectfont teleportOrigin} beschreibt das Element, das als der Ursprung des Elements {\fontfamily{qcr}\selectfont cameraRig} gilt.
+  Mit dem built-in Component {\fontfamily{qcr}\selectfont teleport-controls} wird die Navigation implementiert. Das Attribut {\fontfamily{qcr}\selectfont cameraRig} beschreibt das Element, das sich zu der bezeichneten Position bewegt. Das Attribut {\fontfamily{qcr}\selectfont teleportOrigin} beschreibt das Element, das als der Ursprung des Elements {\fontfamily{qcr}\selectfont cameraRig} gilt.
   
   Wenn das Trackpad auf dem Gear VR Controller gedrückt wird, wird die Position festgelegt. Solange der Trackpad losgelöst wird, bewegt sich das Element {\fontfamily{qcr}\selectfont cameraRig} zu der festgelegten Position. Die Position der Kamera auf den X und Z Achsen sind die gleichen wie die festgelegten Positionen.
   
@@ -930,7 +930,7 @@ export function getWorldBound(element) {
   \subsubsection{Möglichkeit der Verbesserung}
   Die kürzere Ladezeit der Applikation führt zur besseren Benutzererfahrung. Die Größe der Dateien spielt eine wichtige Rolle bei der Ladung.
   
-  Nicht alle Geräte können sich mit der HTC Vive verbinden, deswegen wäre es besser, dass die Codes, die mit HTC Vive zu tun haben, in eone eigene Datei geschrieben und in einem Verzeichnis gespeichert werden. Dieses Verzeichnis wird geladen, nur wenn die HTC Vive Controller erkannt werden.
+  Nicht alle Geräte können sich mit der HTC Vive verbinden, deswegen wäre es besser, dass die Codes, die mit HTC Vive zu tun haben, in eine eigene Datei geschrieben und in einem Verzeichnis gespeichert werden. Dieses Verzeichnis wird geladen, nur wenn die HTC Vive Controller erkannt werden.
   
   So wird die Ladezeit für die Geräte, außer der HTC Vive, verringert.
   
@@ -995,7 +995,7 @@ export function playSubmitSound() {
  \subsection{Arbeitsoberflächendesinfektion auf der Vive}
  Das Feedback der Desinfektion der Arbeitsoberfläche wird durch eine Hinweis-Box über dem Mülleimer und zwei versteckten Umschaltern auf der Arbeitsoberfläche implementiert.
  
- Solange ein Desinfektionstuch in Hder and gehalten wird, wird eine rote Hinweis-Box über dem Mülleimer dargestellt, um die Botschaft zu vermitteln, dass das Tuch und Handschuhe in den Mülleimer eingeworfen werden sollen, aber nicht zu der Zeit, wo die Voraussetzung (Desinfektion der Arbeitsoberfläche) noch nicht erfüllt wird.
+ Solange ein Desinfektionstuch in Hand gehalten wird, wird eine rote Hinweis-Box über dem Mülleimer dargestellt, um die Botschaft zu vermitteln, dass das Tuch und Handschuhe in den Mülleimer eingeworfen werden sollen, aber nicht zu der Zeit, wo die Voraussetzung (Desinfektion der Arbeitsoberfläche) noch nicht erfüllt wird.
  
  Gleichzeitig überprüfen die zwei Umschalter alle 0.5 Sekunden, ob die Kollision zwischen dem Tuch und dem Umschalter erkannt wird. Wenn ein Schalter das Tuch getroffen hat, wird der entsprechende Zustand für den Vive Controller als {\fontfamily{qcr}\selectfont true} gesetzt.
  
@@ -1079,7 +1079,7 @@ export default aAnimationWrapper;
  
  Durch das {\fontfamily{qcr}\selectfont a-animation} Element kann das ganze Objekt animiert werden. Um kompliziertere Animationen zu realisieren, wird das Objekt während der Modellierung direkt animiert.
  
- Das Hand Modell wird in Blender animiert. Zuerst wird das Skelett für die Hand erstellt. Mit der Funktion \glqq Set Parent To \grqq\ können das Modell und die Skelett zusammen verbinden. Durch \glqq Key Frame\grqq\ kann die Hand animiert werden. (Abbildung ~\ref{fig:handSetParentTo} \& Abbildung ~\ref{fig:handKeyframes})
+ Das Hand Modell wird in Blender animiert. Zuerst wird das Skelett für die Hand erstellt. Mit der Funktion \glqq Set Parent To\grqq\ können das Modell und die Skelett zusammen verbinden. Durch \glqq Key Frame\grqq\ kann die Hand animiert werden. (Abbildung ~\ref{fig:handSetParentTo} \& Abbildung ~\ref{fig:handKeyframes})
  
 \begin{figure}[ht]
 \vspace*{1em}
