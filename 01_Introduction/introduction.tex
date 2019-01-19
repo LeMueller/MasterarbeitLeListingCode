@@ -22,20 +22,29 @@ Diese Arbeit beschreibt die Entwicklung eines Projektes, einen Unterricht über 
 
 \section{Motivation}
 
-Das VR-Training zur Vorbereitung einer Infusion ist kein neues Thema. Im Jahr 2016 wird eine Applikation auf der Samsung Gear VR entwickelt \citep{26}. Dadurch kann die Übung für Infusionsvorbereitung mit einem Head-Mounted Display (HMD) durchgeführt werden. Mit der Anwendung der VR Technik können die Kosten für die echten Materialien zum Teil eingespart werden; das betrifft insbesondere die nicht wiederverwendbaren unersetzbaren Materialien wie Infusionsflasche und Infusionsbesteck, die in ihrer Anschaffung zu hohen Kosten führen. Außerdem erliegen die Lernenden so keiner zeitlichen und örtlichen Begrenzungen und sind flexibler in ihrem Lern-Prozess. Sofern eine Samusng Gear VR zu Verfügung steht, kann die Übung zu jeder Zeit und an jedem Ort durchgeführt werden.
+% Das VR-Training zur Vorbereitung einer Infusion ist kein neues Thema. Im Jahr 2016 wird eine Applikation auf der Samsung Gear VR entwickelt \citep{26}. Dadurch kann die Übung für Infusionsvorbereitung mit einem Head-Mounted Display (HMD) durchgeführt werden. Mit der Anwendung der VR Technik können die Kosten für die echten Materialien zum Teil eingespart werden. Das betrifft insbesondere die nicht wiederverwendbaren unersetzbaren Materialien wie Infusionsflasche und Infusionsbesteck, die in ihrer Anschaffung zu hohen Kosten führen. 
 
-Obwohl die Funktionalität der Applikation eine hohe Bewertung während der Evaluation erhält, gibt es noch Probleme bei der Einsetzung und Verbreitung.
+
+Im Jahr 2016 habe ich mit meinen Kollegen (M. Derksen, M. Schäfer und D. Schrörder) unter der Leitung von Dr. T. Pfeiffer eine Gear VR Applikation zum Trainieren der Infusionsvorbereitung entwickelt \citep{26}. Mit dieser Applikation können die Lernenden mit einem Head-Mounted Display (HMD), hierfür Gear VR, die Infusionsvorbereitung via VR Technik trainiert werden. Via VR Technik werden für das Trainieren keine Materialien, die für das triviale Trainieren benötigt sind, wie Infusionsflasche, Infusionsbesteck, Handschuhe und Desinfektionsmittel gebraucht. Infolgedessen können die Kosten der Ausbildung stark reduziert werden und wird die Umwelt wenig mit den einmal gebrauchten Materialien belastet.
+Außerdem erliegen die Lernenden so keiner zeitlichen und örtlichen Begrenzungen und sind flexibler in ihrem Lern-Prozess. Sofern eine Samsung Gear VR zur Verfügung steht, kann die Übung zu jeder Zeit und an jedem Ort durchgeführt werden und für beliebige Male wiederholt werden.
+
+Obwohl die Applikation eine hohe Bewertung während der Evaluation erhielt, gibt es noch einige Erschwernisse bei der Einsetzung und Verbreitung.
 \begin{enumerate}
 
-\item Installation und Aktualisierung ist nicht sehr anwenderfreundlich: es gibt zwei Möglichkeiten, eine Applikation auf der Gear VR laufen zu lassen, Off-Plattform und Oculus Store.
+\item Aufwendige Installation und Aktualisierung: es gibt zwei Möglichkeiten, eine Applikation auf der Gear VR laufen zu lassen, Off-Plattform und Oculus Store.
 
-Off-Plattform ist eine offline Methode. Durch ein Kabel zwischen Samsung Handy und Rechner kann die Applikation direkt auf dem Handy installiert werden. Allerdings jede Aktualisierung wird auch so installiert.
+Off-Plattform ist eine offline Methode.
+%Durch ein Kabel zwischen Samsung Handy und Rechner kann die Applikation direkt auf dem Handy installiert werden.
+In diesem Fall muss die Applikation via einem Entwickler-spezifischen Software (Unity oder Unreal Engine) auf dem Handy installiert werden.
+Für jede Aktualisierung muss der oben genannte Prozess durchgeführt werden.
+%Allerdings jede Aktualisierung wird auch so installiert.
 
-Wenn die Applikation die Überprüfung des Oculus Store besteht und darauf hochgeladen wird, kann die Applikation online durch den Oculus Store heruntergeladen und automatisch aktualisiert werden.
+%Wenn die Applikation die Überprüfung des Oculus Store besteht und darauf hochgeladen wird, kann die Applikation online durch den Oculus Store heruntergeladen und automatisch aktualisiert werden.
+Via Oculus Store muss die Applikation von dem Oculus Stroe überprüft werden, danach darf sie auf dem Store hochgeladen werden sowie von dem Anwender installiert werden. Jede Aktualisierung muss auch die Prüfung bestehen.
 
 Die beiden Methode sind entweder für Endnutzer, oder für Entwickler nicht anwenderfreundlich, was die Installation und die Aktualisierung betrifft.
 
-\item Hohe Kosten: eine Gear VR kostet 40 Euro (alte Version, ohne Controller) oder 100 Euro (neue Version, mit Controller). Dazu wird ein Samsung Handy benötigt. Dieses sollte die notwendige starke Leistung mit sich bringen, und kostet so noch mindesten 500 Euro. Für Studenten ist es schwer, so viel Geld aufzuwenden. Für die Hochschule ist es auch nicht wenig Geld, mehrere Geräte zu kaufen, um eine gleichzeitige Nutzung mehrerer Lerndenden zu unterstützen.
+\item Hohe Kosten: eine Gear VR kostet 40 Euro (alte Version, ohne Controller) oder 100 Euro (neue Version, mit Controller). Dazu wird ein Samsung Handy benötigt. Dieses sollte die notwendige Leistung mit sich bringen, und kostet so noch mindesten 500 Euro. Für die Auszubildenden ist es schwer, so viel Geld einzusetzen. Für die Hochschule ist es auch nicht wenig Geld, mehrere Geräte zu kaufen, um eine gleichzeitige Nutzung mehrerer Lernenden zu unterstützen.
 
 \item Trennung mit dem Lernprozess: der Prozess, diese Technik zur Erarbeitung des zu Lernenden, betriebsbereit zur Verfügung zu stellen, ist nicht eng verbunden mit dem Lernprozess und kann hier für zeitlichen Verzug sorgen. Entweder die Einsetzung und Konfiguration während eines Seminars in Labor, oder Installation während des Lernens zu Hause ist eine Ablenkung von dem eigentlichen Lernprozess.
 
@@ -45,32 +54,37 @@ Um bessere Benutzererfahrung des Trainings durch die VR zu haben, und die oben g
 
 \section{Zielsetzung}
 
-Dieses Projekt basiert auf dem Gear VR Projekt. Das Ziel dieses Projekts ist es, eine Applikation zu entwickeln, sodass die Übung der Infusionsvorbereitung zugänglicher ist und enger mit dem Lernprozess verbunden ist.
+%Dieses Projekt basiert auf dem Gear VR Projekt. Das Ziel dieses Projekts ist es, eine Applikation zu entwickeln, sodass die Übung der Infusionsvorbereitung zugänglicher ist und enger mit dem Lernprozess verbunden ist.
 
-Um die Implementierung zu kritisieren, werden einige konkrete Ziele gesetzt.
+Das Ziel dieses Projektes ist die oben erwähnte Gear VR Applikation bezüglich ihrer Zugänglichkeit zur Anwender, Abhängigkeit der Infrastruktur und die enge Verbindlichkeit mit dem Lernprozess weiter zu entwickeln.
+
+Um die Implementierung zu kritisieren, werden folgende konkrete Ziele gesetzt:
 
 \begin{enumerate}[labelsep=1ex]
 	\renewcommand{\labelenumi}{\textbf{Z\theenumi.}}
-	\item Erstellung eines Unterrichtes in einem Learning Management System, welcher mit einer VR Übung verbunden ist, und das Vorwissen und den entsprechenden Test bereitstellt.
+	\item Erstellung eines Unterrichtes in einem Learning Management System, welcher mit einer VR Übung verbunden ist, und das Vorwissen sowie den entsprechenden Test bereitstellt.
 	
-	\item Die Applikation soll eine cross-plattform sein, demnach unabhängig von Geräten und Betriebssystem sein. Das heißt, dass die VR Übung auf Smartphone, Laptop und verschiedenen HMDs durchgeführt werden kann.
+	\item Die Applikation soll cross-plattform sein, demnach unabhängig von Geräten und Betriebssystem sein. Das heißt, dass die VR Übung auf Smartphone, Laptop und verschiedenen HMDs durchgeführt werden kann.
 	
 	\item Die Installation und Aktualisierung der Applikation soll einfach und automatisch sein.
 	
-	\item Die Interaktionen in der VR Übung sollen sich für unterschiedliche Geräte und Controller unterscheiden.
+	%\item Die Interaktionen in der VR Übung sollen sich für unterschiedliche Geräte und Controller unterscheiden.
+	\item Die Interaktionen in der VR Übung sollen mit unterschiedlichen Geräten und Controllern kompatibel sein.
 	
-	\item Die VR Übung soll die reale Übung simulieren. Die Objekte in der VR Umgebung sollen erkennbar sein. Die Reihenfolge der Schritte in der VR Übung soll den Anforderung der realen Übung entsprechen. Das Feedback der Interaktionen in VR Übung soll eindeutig sein.
+	\item Die VR Übung soll die reale Übung sehr gut simulieren. Die Objekte in der VR Umgebung sollen gut erkennbar sein. Die Reihenfolge der Schritte in der VR Übung soll den Anforderung der realen Übung entsprechen. Das Feedback der Interaktionen in VR Übung soll eindeutig sein.
 	
-	\item Die Applikation soll in den Unterricht integriert werden. Die Verwendung des HMDs und der Aufruf der Applikation sollen zu keiner Ablenkung führen. Nach der VR Übung soll der Benutzer wieder zurück zum Unterricht geleitet werden.
+	\item Die Applikation soll in den Unterricht integriert werden. Die Verwendung des HMDs und der Aufruf der Applikation sollen zu keiner Ablenkung führen. Nach der VR Übung soll der Benutzer einfach und schnell zurück zum Unterricht geleitet werden können.
 	
 \end{enumerate}
 
 \section{Aufbau der Arbeit}
-Im Kapitel {\em Stand der Forschung und Stand der Technik} wird erst die Forschung über E-Learning und VR-Training erarbeitet, die die theoretische Grundlage für das Projekt bieten. Danach werden die VR Technik und WebVR Technik erklärt, die die Möglichkeit der Implementierung des Projekts bieten.
+%Im Kapitel {\em Stand der Forschung und Stand der Technik} wird erst die Forschung über E-Learning und VR-Training erarbeitet, die die theoretische Grundlage für das Projekt bieten. Danach werden die VR Technik und WebVR Technik erklärt, die die Möglichkeit der Implementierung des Projekts bieten.
+
+Erstens werden im Kapitel {\em Stand der Forschung und Stand der Technik} die Kenntnisse über E-Learning und VR-Training, die die theoretische Grundlage für dieses Projekt dargestellt, vorgestellt. Anschließend werden die VR Technik und WebVR Technik, die die Möglichkeit der Implementierung des Projekts bieten, erklärt.
 
 Im Kapitel {\em Konzeption} werden die entsprechenden Ideen für oben genannte Ziele beschrieben. 
 
-Im Kapitel {\em Implementierung} werden die konkreten technischen Lösungen für die Konzeption bemerkt.
+Im Kapitel {\em Implementierung} werden die konkreten technischen Lösungen für die Konzeption beschrieben.
 
 Im Kapitel {\em Evaluation} wird die Studie für das Projekt beschrieben, von der Gestaltung der Studie bis hin zur Analyse der gesammelten Daten. Durch die Studie werden der Lerneffekt und die Benutzererfahrung der VR Übung untersucht.
 

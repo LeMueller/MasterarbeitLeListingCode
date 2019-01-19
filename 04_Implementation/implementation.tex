@@ -1,25 +1,25 @@
 \chapter{Implementierung}
 
-Die Implementierung wird in zwei Teile gegliedert, Learning Management System (LMS) und WebVR Applikation. Bei dem Teil LMS werden die Auswahl von LMS und die Erstellung des Unterrichts über die Vorbereitung einer Infusion thematisiert. Bei dem Teil WebVR Applikation werden von Auswahl des Frameworks bis Implementierungen der Features, die beim Kapitel Konzeption gestaltet sind, erklärt.
+Die Implementierung wird in zwei Teile gegliedert, Learning Management System (LMS) und WebVR Applikation. Bei dem Teil LMS werden die Auswahl von LMS und die Erstellung des Unterrichts über die Vorbereitung einer Infusion thematisiert. Bei dem Teil WebVR Applikation werden von Auswahl des Frameworks bis Implementierungen der Features, die bei diesem Kapitel Konzeption gestaltet sind, erklärt.
 
 \section{Learning Managment System}
 
-Viele LMS werden auf dem Markt angeboten. Eine geeignete Plattform für das Projekt wird ausgewählt, worauf ein Unterricht zur Infusionsvorbereitung gestaltet wird. ein paar Lernmethoden, beispielsweise VR Übungen, werden im Unterricht eingesetzt.
+Viele LMSs werden auf dem Markt angeboten. Eine geeignete Plattform für das Projekt wird ausgewählt, worauf ein Unterricht zur Infusionsvorbereitung gestaltet wird. ein paar Lernmethoden, beispielsweise VR Übungen, werden im Unterricht eingesetzt.
 
  \subsection{LMS Auswahl}
 
- Laut Capterra stehen mehr als 400 LMS mit Web Applikation zu Verfügung. Jedes LMS hat eigene Merkmale. Moodle ist ein LMS auf dem Markt, dessen Eigenschaften gut zu diesem Projekt passen.
+ Laut Capterra stehen mehr als 400 LMSs mit Web Applikation zur Verfügung. Jedes LMS hat eigene Merkmale. Moodle ist ein LMS auf dem Markt, dessen Eigenschaften gut zu diesem Projekt passen.
  
  Der größte Vorteil von Moodle für das Projekt ist, dass Moodle eine kostenlose open source LMS Plattform ist. Das heißt, dass es möglich ist, Moodle gratis auf den eigenen Server zu installieren, mit einer eigenen Datenbank zu verbinden und nach eigenen Anforderungen einzustellen.
  
- In Moodle können auch Arbeitsmaterialien wie Bücher, Dateien, Links usw. angeboten werden. Bei diesem Projekt wird der Nutzer durch den URLs in Moodle zu der WebVR Applikation geleitet, wie die erste Form, die in dem Kapitel Konzeption beschrieben wird. 
+ In Moodle können auch Arbeitsmaterialien wie Bücher, Dateien, Links usw. angeboten werden. Bei diesem Projekt wird der Nutzer durch den URLs in Moodle zu der WebVR Applikation geleitet, wie die erste Form, die in dem Kapitel 3.1.3 (Seite 24) beschrieben wird. 
  
  \subsection{Unterricht}
- Bei dem Unterricht zur Infusionsvorbereitung werden fünf Arbeitsmaterialien (drei Links, eine Datei und ein Textseite) und eine Aktivität eingesetzt (Abbildung ~\ref{fig:unterricht}). Die drei Links leiten jeweils auf einer Erklärung zur Infusionsvorbereitung in Text, einer Erzählung über 5-R-Regel in Text und einem Video über Infusionsvorbereitung auf Youtube um. Die Datei ist ein Diagramm, damit der Ablauf der Vorbereitung einer Infusion graphisch dargestellt wird.
+ Bei dem Unterricht zur Infusionsvorbereitung werden fünf Arbeitsmaterialien (drei Links, eine Datei und ein Textseite) und eine Aktivität eingesetzt.(Abbildung ~\ref{fig:unterricht}) Die drei Links leiten jeweils auf einer Erklärung zur Infusionsvorbereitung in Text, einer Erzählung über 5-R-Regel in Text und einem Video über Infusionsvorbereitung auf Youtube um. Die Datei ist ein Diagramm, damit der Ablauf der Vorbereitung einer Infusion graphisch dargestellt wird.
  
- Die Textseite bietet den Zugang der praktischen Übung in VR Umgebung. Über die Methoden der Interaktion für unterschiedliche Geräten wird zuerst informiert. Danach wird der Ablauf mit dem Diagramm noch einmal wiederholt. Und die acht Abschnitte in der Übung werden bezeichnet. Zum Abschluss werden acht Links aufgelistet, die auf dem entsprechenden Abschnitt in der VR Übung umleiten.
+ Die Textseite bietet den Zugang der praktischen Übung in VR Umgebung. Über die Methoden der Interaktion für unterschiedliche Geräten wird es zuerst informiert. Danach wird der Ablauf mit dem Diagramm noch einmal wiederholt. Die acht Abschnitte in der Übung werden bezeichnet. Zum Abschluss werden acht Links aufgelistet, die auf dem entsprechenden Abschnitt in der VR Übung umleiten.
  
- Am Ende des Unterrichtes wird die Aktivität Test angeboten. Dadurch wird der Lerneffekt überprüft. Und das Ergebnis wird in Moodle gespeichert.
+ Am Ende des Unterrichtes wird die Aktivität Test angeboten. Dadurch wird der Lerneffekt überprüft. Das Ergebnis wird in Moodle gespeichert.
  
  Die VR Übung und der Test sind wiederholbar, um den Lernenden zu helfen, die Fertigkeit richtig zu beherrschen.
  
@@ -43,7 +43,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
      \item Das Framework kann unterschiedliche Geräte unterstützen, z.B. PC, Smartphone und HMD.
      \item Das Projekt kann auf einem eigenen Server bewahrt werden.
      \item Die Nutzung ist kostenlos.
-     \item Reichliche Dokumentation und erreichbare Community stehen zu Verfügung.
+     \item Reichliche Dokumentation und erreichbare Community stehen zur Verfügung.
      \item Das Framework soll lange Zeit unterstützt und am besten kontinuierlich weiterentwickelt werden.
  \end{enumerate}
  
@@ -51,13 +51,13 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
  
  \begin{itemize}
  
-     \item \textbf{Unity} \citep{37} ist ein umfangreiche Game Engine. Viele built-in Funktionen stehen zu Verfügung. Mit dem Plugin von Mozilla kann ein Projekt als WebVR Applikation exportiert werden. Allerdings wird das Projekt in einen Rahmen gestellt. In diesem Rahmen ist die Entwicklung hoch effizient. Aber es ist schwierig, mit den Dinge außerhalb des Rahmens, beispielsweise LMS, anzupassen. Deswegen wird Unity nicht ausgewählt.
+     \item \textbf{Unity} \citep{37} ist ein umfangreiche Game Engine. Viele built-in Funktionen stehen zur Verfügung. Mit dem Plugin von Mozilla kann ein Projekt als WebVR Applikation exportiert werden. Allerdings wird das Projekt in einen Rahmen gestellt. In diesem Rahmen ist die Entwicklung hoch effizient. Aber es ist schwierig, mit den Objekten außerhalb des Rahmens, beispielsweise LMS, anzupassen. Deswegen wird Unity nicht ausgewählt.
      
-     \item \textbf{Play Canvas} \citep{38} ist eine webbasiert Game Engine. Damit kann das Projekt direkt als WebVR Applikation exportiert werden. Aber wenn man die Applikation auf einem eigenen Server bewahren möchte, muss man monatlich zahlen. (Abbildung ~\ref{fig:Webbasierte Engine})
+     \item \textbf{Play Canvas} \citep{38} ist eine webbasierte Game Engine. Damit kann das Projekt direkt als WebVR Applikation exportiert werden. Aber wenn man die Applikation auf einem eigenen Server bewahren möchte, muss man monatlich zahlen. (Abbildung ~\ref{fig:Webbasierte Engine})
      
      \item \textbf{Vizor} \citep{39} ist eine webbasierte visuelle WebVR Plattform. Die Scripts werden durch Blueprints geschrieben. Ihre Stärke ist, die 360 Grad oder VR Szene darzustellen. Allerdings reicht die Unterstützung für Interaktion für dieses Projekt nicht aus. (Abbildung ~\ref{fig:Webbasierte Engine})
      
-     \item \textbf{React 360} \citep{40} basiert teilweise auf three.js und wird von Facebook entwickelt. Die Logik der Entwicklung von React 360 ist die gleiche wie die bekannte JavaScript Bibliothek React im Bereich Frontend-Entwicklung. Allerdings wurde React 360 noch nicht vorgestellt, als dieses Projekt anfing. Damals existierte nur der Vorfahre von React 360, nämlich React VR. Aber die Funktionalität von React VR war nicht ausreichend genug, dieses Projekt zu entwickeln.
+     \item \textbf{React 360} \citep{40} basiert teilweise auf three.js und wird von Facebook entwickelt. Die Logik der Entwicklung von React 360 ist die gleiche wie die bekannte JavaScript Bibliothek React im Bereich der Frontend-Entwicklung. Allerdings wurde React 360 noch nicht vorgestellt, als dieses Projekt anfing. Damals existierte nur der Vorfahre von React 360, nämlich React VR. Aber die Funktionalität von React VR war nicht ausreichend genug, dieses Projekt zu entwickeln.
      
      \item \textbf{A-Frame} \citep{41} ist ein von Mozilla entwickeltes kostenloses open source WebVR Framework. Es bietet die größte Freiheit, das Projekt zu manipulieren. Außerdem werden unterschiedliche Geräte unterstützt. Mit A-Frame werden die Funktionen von three.js in einem Entity-Component System eingewickelt. Die Features von three.js werden vererbt. Die Lösungen der Probleme über die Entwicklung können entweder in der Community von A-Frame oder der Community von three.js gefunden werden.
      
@@ -73,7 +73,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
  A-Frame kann alle Anforderungen erfüllen. Deshalb fällt die Entscheidung nach dem Vergleich auf A-Frame.
  
  \subsection{Projektierung}
- Im Bereich Web Entwicklung werden zwei beliebte Werkzeuge geboten, Node Package Manager (npm) und Webpack. Mit den Beiden Werkzeugen kann Web Applikation projektiert werden und die Effizient der Entwicklung gefördert werden.
+ Im Bereich der Web Entwicklung werden zwei beliebte Werkzeuge geboten, Node Package Manager (npm) und Webpack. Mit den Beiden Werkzeugen kann Web Applikation projektiert werden und die Effizienz der Entwicklung gefördert werden.
  
  Npm ist ein Packetmanager für die JavaScript-Laufzeitumgebung Node.js. Mit npm ist es einfach, die auf npm gespeicherten Pakete (Software) zu benutzen. Die Abhängigkeit der Pakete wird durch npm automatisch behandelt. Alle benutzten Pakete werden in einer Datei eingepackt, sodass der Einsatz auf dem Server erleichtert wird. (Abbildung ~\ref{fig:npmWebpack})
  
@@ -88,7 +88,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
  
  Webpack-dev-server ist ein zusätzliches Werkzeug von Webpack. Dadurch werden die verpackten JavaScript Dateien automatisch kompiliert und die Webseite im Browser automatisch aktualisiert, solange die Codes geändert werden.
  
- Während der Entwicklung einer Web Applikation können die CORS (Cross-Origin Resource Sharing) Errors auftauchen, wenn die lokale zugängliche Datei direkt im Browser aufgerufen wird, um den Effekt im Code anzuschauen. Der Grund ist, dass zur Sicherheit die Browsers Same-Origin-Policy (Abbildung ~\ref{fig:Same-Origin-Policy}) benutzt werden. Das heißt, dass es untersagt wird, auf Objekte (zum Beispiel Grafiken) zuzugreifen, die von einer anderen Webseite stammen oder deren Speicherort nicht der Origin entspricht. Die vom Browser direkt aufgerufenen lokalen Dateien gelten nicht als Same-Origin requests sondern als Cross-Origin requests.
+ Während der Entwicklung einer Web Applikation können die CORS (Cross-Origin Resource Sharing) Errors auftauchen, wenn die lokale zugängliche Datei direkt im Browser aufgerufen wird, um den Effekt im Code anzuschauen. Der Grund ist, dass zur Sicherheit die Browser Same-Origin-Policy (Abbildung ~\ref{fig:Same-Origin-Policy}) benutzen. Das heißt, dass es untersagt wird, auf Objekte (zum Beispiel Grafiken) zuzugreifen, die von einer anderen Webseite stammen oder deren Speicherort nicht der Origin entspricht. Die vom Browser direkt aufgerufenen lokalen Dateien gelten nicht als Same-Origin requests sondern als Cross-Origin requests.
  
 \begin{figure}[ht]
 \centering
@@ -97,7 +97,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
 \label{fig:Same-Origin-Policy}
 \end{figure}
  
- Http-server ist ein auf npm gespeichertes Werkzeug, wodurch ein Server (localhost) auf einem eigenen PC erstellt werden kann. Und ein ausgewählter Ordner auf dem PC wird als das Wurzelverzeichnis des Servers eingerichtet. Alle Dateien in diesem Ordner gelten als in dem gleichen Origin, sodass die CORS Errors behoben werden.
+ Http-server ist ein auf npm gespeichertes Werkzeug, wodurch ein Server (localhost) auf einem eigenen PC erstellt werden kann. Ein ausgewählter Ordner auf dem PC wird als das Wurzelverzeichnis des Servers eingerichtet. Alle Dateien in diesem Ordner gelten als in dem gleichen Origin, sodass die CORS Errors behoben werden.
  
  Nach der Projektierung ist die Struktur der Applikation wie in Abbildung ~\ref{fig:projektStruktur} gezeigt wird.
  
@@ -127,7 +127,7 @@ Die Implementierung der WebVR Applikation ist der Schwerpunkt dieses Projektes. 
   
   Die Funktionalität davon ist ähnlich wie der Mechanismus von Twitter. Zum Beispiel Linus Torvalds \citep{42} von der Socialmediaplattform Twitter, die es seit 2012 gibt und wo Nutzer einen Account anlegen und anderen Nutzern \glqq folgen\grqq\ können. Bei Posts einer gefolgten Person werden die \glqq Folgenden\grqq\ benachrichtigt. (Abbildung ~\ref{fig:observerPatern})
   
-  Im Bereich Softwareentwicklung wird der Gefolgten als \glqq Observable\grqq\ oder \glqq Subject\grqq\ bezeichnet. Die Folgenden werden als \glqq Observer\grqq\ bezeichnet. Die Aktivität \glqq follow\grqq\ ist \glqq Subscribe\grqq\. Die Benachrichtigung heißt \glqq Notify\grqq.
+  Im Bereich der Softwareentwicklung wird der Gefolgten als \glqq Observable\grqq\ oder \glqq Subject\grqq\ bezeichnet. Die Folgenden werden als \glqq Observer\grqq\ bezeichnet. Die Aktivität \glqq follow\grqq\ ist \glqq Subscribe\grqq\. Die Benachrichtigung heißt \glqq Notify\grqq.
   
 \begin{figure}[ht]
 \centering
@@ -165,15 +165,15 @@ export default class Observable {
 \end{lstlisting}
 \label{fig:observable} 
 \end{figure}
-  Während der Erstellung einer Instanz von {\fontfamily{qcr}\selectfont Observable} wird ein Array {\fontfamily{qcr}\selectfont Observers} generiert, um die Funktionen von \glqq Observers\grqq\ zu speichern. Durch die Funktionen {\fontfamily{qcr}\selectfont subscribe} und {\fontfamily{qcr}\selectfont unsubscribe} können die Funktionen von \glqq Observer\grqq\ in dem Array eingefügt oder von dem Array ausgezogen werden. Die \glqq Observers\grqq\ sollen eine Funktion mit einem Parameter haben, um die Nachrichten von {\fontfamily{qcr}\selectfont Observable} zu empfangen. Wenn die Funktion {\fontfamily{qcr}\selectfont Notify} aufgerufen wird, werden alle abonnierten Funktionen von \glqq Observers\grqq\ in dem Array {\fontfamily{qcr}\selectfont Observers} nacheinander aufgerufen. Der Parameter der Funktion {\fontfamily{qcr}\selectfont Notify} wird als Parameter der Funktion von \glqq Observers\grqq\ eingesetzt, sodass die Nachrichten ausgeteilt werden.
+  Während der Erstellung einer Entität von {\fontfamily{qcr}\selectfont Observable} wird ein Array {\fontfamily{qcr}\selectfont Observers} generiert, um die Funktionen von \glqq Observers\grqq\ zu speichern. Durch die Funktionen {\fontfamily{qcr}\selectfont subscribe} und {\fontfamily{qcr}\selectfont unsubscribe} können die Funktionen von \glqq Observer\grqq\ in dem Array eingefügt oder von dem Array ausgezogen werden. Die \glqq Observers\grqq\ sollen eine Funktion mit einem Parameter haben, um die Nachrichten von {\fontfamily{qcr}\selectfont Observable} zu empfangen. Wenn die Funktion {\fontfamily{qcr}\selectfont Notify} aufgerufen wird, werden alle abonnierten Funktionen von \glqq Observers\grqq\ in dem Array {\fontfamily{qcr}\selectfont Observers} nacheinander aufgerufen. Der Parameter der Funktion {\fontfamily{qcr}\selectfont Notify} wird als Parameter der Funktion von \glqq Observers\grqq\ eingesetzt, sodass die Nachrichten ausgeteilt werden.
   
   \subsubsection{Zustände Management}
   
-  Um das Zustandsmanagement zu realisieren, wird ein Klasse {\fontfamily{qcr}\selectfont stateIndex} geschrieben. Da fast alle Objekt in der Szene mit dieser Klasse verbunden sind und den einzigen \glqq state container\grqq referenzieren, wird die Klasse als \glqq static\grqq Klasse definiert.
+  Um das Zustandsmanagement zu realisieren, wird ein Klasse {\fontfamily{qcr}\selectfont stateIndex} geschrieben. Da fast alle Objekt in der Szene mit dieser Klasse verbunden sind und den einzigen \glqq state container\grqq\ referenzieren, wird die Klasse als \glqq static\grqq\ Klasse definiert.
 
-  Die \glqq static\grqq\ Klasse hat keine Entität. Die zugehörigen Funktionen werden direkt durch die Klasse aufgerufen. Da es keine \glqq static\grqq\ Klasse in JavaScript gibt, gilt die Klasse, deren allen zugehörigen Attributen und Funktionen \glqq static\grqq\ sind, als \glqq static\grqq Klasse.
+  Die \glqq static\grqq\ Klasse hat keine Entität. Die zugehörigen Funktionen werden direkt durch die Klasse aufgerufen. Da es keine \glqq static\grqq\ Klasse in JavaScript gibt, gilt die Klasse, deren allen zugehörigen Attributen und Funktionen \glqq static\grqq\ sind, als \glqq static\grqq\ Klasse.
   
-  Mit der Funktion {\fontfamily{qcr}\selectfont init}  werden alle Zustände initialisiert. Die Initialisierung liegt an dem Query string in URL (Abbildung ~\ref{fig:queryString}). Der Query string ist ein Teil von URL, wodurch der Parameter bei dem \glqq request\grqq zusammen an den Server geschickt wird. Bei dieser Applikation ist der Query string die Ziffer des ausgewählten Abschnitts. Mit dem Query string werden die Zustände nach dem ausgewählten Abschnitt initialisiert.
+  Mit der Funktion {\fontfamily{qcr}\selectfont init}  werden alle Zustände initialisiert. Die Initialisierung liegt an dem Query string in URL.(Abbildung ~\ref{fig:queryString}) Der Query string ist ein Teil von URL, wodurch der Parameter bei dem \glqq request\grqq\ zusammen an den Server geschickt wird. Bei dieser Applikation ist der Query string die Ziffer des ausgewählten Abschnitts. Mit dem Query string werden die Zustände nach dem ausgewählten Abschnitt initialisiert.
   
   Während der Initialisierung wird eine Entität von {\fontfamily{qcr}\selectfont Observable} erstellt, um die Benachrichtigung zu verbreiten.
   
@@ -186,11 +186,11 @@ export default class Observable {
 \label{fig:queryString} 
 \end{figure}
   
-  Zu Sicherheit dürfen die Zustände von anderen Objekt nicht erreichbar sein. Deswegen werden die Funktionen von der Klasse {\fontfamily{qcr}\selectfont stateIndex} angeboten, um die Zustände zu manipulieren.
+  Zur Sicherheit dürfen die Zustände von anderen Objekt nicht erreichbar sein. Deswegen werden die Funktionen von der Klasse {\fontfamily{qcr}\selectfont stateIndex} angeboten, um die Zustände zu manipulieren.
   
   \begin{itemize}
       \item {\fontfamily{qcr}\selectfont getState}: um alle aktuelle Zustände zu bekommen.
-      \item {\fontfamily{qcr}\selectfont get}: um einen bestimmte Zustand zu bekommen.
+      \item {\fontfamily{qcr}\selectfont get}: um einen bestimmten Zustand zu bekommen.
       \item {\fontfamily{qcr}\selectfont getIn}: um einen bestimmten Zustand in tiefen Ebenen zu bekommen.
       \item {\fontfamily{qcr}\selectfont set}: um einen bestimmten Zustand zu aktualisieren. Durch die Funktion {\fontfamily{qcr}\selectfont Notify} von \glqq Observable\grqq\ werden neue Zustände an alle \glqq Observer\grqq\ geschickt.
       \item {\fontfamily{qcr}\selectfont setIn}: um einen bestimmten Zustand in tiefen Ebenen zu aktualisieren. Durch der Funktion {\fontfamily{qcr}\selectfont Notify} von \glqq Observable\grqq\ werden die neuen Zustände an alle \glqq Observer\grqq\ ausgeteilt.
@@ -204,7 +204,7 @@ export default class Observable {
   
   Um die GUI richtig einzusetzen, wird ein Trick benutzt. Wenn die Applikation aufgerufen wird, wird die Szene nach den aktuellen Zuständen eingerichtet und es werden gleichzeitig die Modelle geladen. Es könnte passieren, dass ein Modell noch nicht fertig geladen ist, wenn es von der Aktualisierung betroffen ist. Das führt zu Fehlern in der Applikation.
   
-  Um das Problem zu lösen, wird die Ladung vor der Aktualisierung überprüft (Abbildung ~\ref{fig:checkLadung}). Mit der Funktion {\fontfamily{qcr}\selectfont setInterval} wird es implementiert, alle 0,5 Sekunden den Zustand der Ladung zu überprüfen. Wenn alle Modelle schon geladen sind, wird die Überprüfung beendet und die Szene aktualisiert.
+  Um das Problem zu lösen, wird die Ladung vor der Aktualisierung überprüft.(Abbildung ~\ref{fig:checkLadung}) Mit der Funktion {\fontfamily{qcr}\selectfont setInterval} wird es implementiert, alle 0,5 Sekunden den Zustand der Ladung zu überprüfen. Wenn alle Modelle schon geladen sind, wird die Überprüfung beendet und die Szene aktualisiert.
   
 \begin{figure}[ht]
 \vspace*{1.2em}
@@ -238,7 +238,7 @@ export default class stateIndex {
   \subsubsection{Abschnitte Auswahl in VR Szene}
   Auf dem Whiteboard werden die Abschnitte aufgelistet. Durch Zeiger oder Raycaster wird die Funktion {\fontfamily{qcr}\selectfont selectSection} in der Klasse {\fontfamily{qcr}\selectfont stateIndex} mit entsprechendem Parameter aufgerufen, um den Abschnitt zu wechseln.
   
-  Vor den Zeichnen auf dem Whitebard werden 7 \glqq toggle boxes\grqq eingesetzt, wodurch die Funktion {\fontfamily{qcr}\selectfont selectSection} durch HTC Vive Controllers aufgerufen werden kann. (Abbildung ~\ref{fig:toggleBoxAbschnitte})
+  Vor den Zeichnen auf dem Whitebard werden 7 \glqq toggle boxes\grqq\ eingesetzt, wodurch die Funktion {\fontfamily{qcr}\selectfont selectSection} durch HTC Vive Controllers aufgerufen werden kann. (Abbildung ~\ref{fig:toggleBoxAbschnitte})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -249,19 +249,19 @@ export default class stateIndex {
 \end{figure}
   
   \subsubsection{Möglichkeit der Verbesserung}
-  Die Abschnitte-Auswahl kann nicht nur während der Initialisierung, sondern auch nach der Initialisierung durchgeführt wird. Deswegen sollen die Funktionen der Abschnitte-Auswahl wie {\fontfamily{qcr}\selectfont selectSection} nicht in der Klasse {\fontfamily{qcr}\selectfont stateIndex} eingepackt werden, sondern in eine eigene Datei geschrieben werden.
+  Die Abschnitte-Auswahl kann nicht nur während der Initialisierung, sondern auch nach der Initialisierung durchgeführt werden. Deswegen sollen die Funktionen der Abschnitte-Auswahl wie {\fontfamily{qcr}\selectfont selectSection} nicht in der Klasse {\fontfamily{qcr}\selectfont stateIndex} eingepackt werden, sondern in eine eigene Datei geschrieben werden.
   
  \subsection{Gestaltung der Struktur der Klassen der Objekte}
  Um das Projekt effizient zu entwickeln, wird eine Struktur der Klassen gestaltet, die sich an die meisten Objekte in diesem Projekt anpassen kann. Die Struktur basiert auf der Klasse Struktur von A-Frame.
  
  \subsubsection{Gestaltung}
- Die Philosophie von A-Frame ist, mit spezifischen HTML Elementen die Szene aufzubauen. Ein Element ist eine Kombination der Entitäten von unterschiedlichen Klassen (Abbildung ~\ref{fig:aframeClass}). Eine Entität kann ein HTML Element oder ein Attribut eines HTML Elements sein. Das Klasse in A-Frame wird als Component bezeichnet.
+ Die Philosophie von A-Frame ist, mit spezifischen HTML Elementen die Szene aufzubauen. Ein Element ist eine Kombination der Entitäten von unterschiedlichen Klassen.(Abbildung ~\ref{fig:aframeClass}) Eine Entität kann ein HTML Element oder ein Attribut eines HTML Elements sein. Das Klasse in A-Frame wird als Component bezeichnet.
  
  Drei built-in Objekte von Component sind wichtig.
  \begin{itemize}
      \item {\fontfamily{qcr}\selectfont init} ist eine Funktion, die während der Erstellung einer Entität von Component durchgeführt wird.
      \item {\fontfamily{qcr}\selectfont schema} ist ein JavaScript Objekt, das Attribute von Component speichert.
-     \item {\fontfamily{qcr}\selectfont update} ist eine Funktion, die durchgeführt wird, wenn das schema durch HTML geändert wird. Die Initialisierung gilt als eine Änderung von schema, d.h. dass die Funktion update während der Erstellung einer Entität durchgeführt wird. Deswegen muss die Funktion init nicht definiert sein, wenn die Funktion update existiert.
+     \item {\fontfamily{qcr}\selectfont update} ist eine Funktion, die durchgeführt wird, wenn das schema durch HTML geändert wird. Die Initialisierung gilt als eine Änderung von schema, d.h. dass die Funktion update während der Erstellung einer Entität durchgeführt wird. Deswegen muss die Funktion {\fontfamily{qcr}\selectfont init} nicht definiert sein, wenn die Funktion update existiert.
  \end{itemize}
  
 \begin{figure}[ht]
@@ -278,7 +278,7 @@ export default class stateIndex {
  
  Der Code der Klasse {\fontfamily{qcr}\selectfont Observable} hat gezeigt, dass die Parameter der Funktion {\fontfamily{qcr}\selectfont subscribe} eine Funktion sein sollen. Aber die Funktionen, die in der Klasse definiert werden, gelten nicht als eine bestimmte Funktion bei JavaScript. Deshalb müssen die Funktionen, die als \glqq observer\grqq\ benutzt werden, außerhalb der Klasse definiert werden, sodass die Entitäten der Klasse die Nachrichten von \glqq observable\grqq\ empfangen können. Das führt zu einer suboptimalen Situation, dass alle Entität, die durch die gleiche Klasse erstellt werden, dieselben Funktionen und Eigenschaften benutzen. (Abbildung ~\ref{fig:eigenesClass})
  
- Obwohl die Struktur der Klasse sich der Philosophie von A-Frame nicht anpasst, ist es praktisch und geeignet für dieses Projekt, weil fast alle Klassen nur eine einzige Entität in der Szene haben.
+ Obwohl die Struktur der Klasse sich der Philosophie von A-Frame nicht anpasst, ist es praktisch geeignet für dieses Projekt, weil fast alle Klassen nur eine einzige Entität in der Szene haben.
  
  Um die Attribute und Funktionen von Component von die Funktion in \glqq observer\grqq\ zu erreichen, werden die Attribute und Funktionen beispielsweise {\fontfamily{qcr}\selectfont schema} auch außerhalb der Klasse als globale Variablen geschrieben.
  
@@ -318,7 +318,7 @@ function changeState() {
  \subsubsection{Möglichkeit der Verbesserung}
  Es ist auch möglich, nach der Philosophie von A-Frame die Klassen Struktur zu gestalten.
  
- Durch anpassen von {\fontfamily{qcr}\selectfont addEventListener} ({\fontfamily{qcr}\selectfont on} in Jquery), das während der Initialisierung eingefügt wird, kann die Nachricht von \glqq observable\grqq\ in die Klasse transportiert werden. (Abbildung ~\ref{fig:bestesClass})
+ Durch Anpassen von {\fontfamily{qcr}\selectfont addEventListener} ({\fontfamily{qcr}\selectfont on} in Jquery), das während der Initialisierung eingefügt wird, kann die Nachricht von \glqq observable\grqq\ in die Klasse transportiert werden. (Abbildung ~\ref{fig:bestesClass})
  
 \begin{figure}[ht]
 \vspace*{1em}
@@ -373,7 +373,7 @@ export function handleNotify(event) {
   \vspace{1em}
   
   \noindent
-  Mit einer Entität von built-in Component {\fontfamily{qcr}\selectfont a-camera} in A-Frame wird eine Kamera in der Szene eingesetzt (Abbildung ~\ref{fig:cameraHtml}). Dadurch wird die Sicht des Nutzers in der VR Umgebung erstellt. Die Interaktionen, die die Kamera betreffen, nämlich Exploration und Navigation werden in dieser Entität realisiert.
+  Mit einer Entität von built-in Component {\fontfamily{qcr}\selectfont a-camera} in A-Frame wird eine Kamera in der Szene eingesetzt.(Abbildung ~\ref{fig:cameraHtml}) Dadurch wird die Sicht des Nutzers in der VR Umgebung erstellt. Die Interaktionen, die die Kamera betreffen, nämlich Exploration und Navigation werden in dieser Entität realisiert.
   
   Mit dem Component {\fontfamily{qcr}\selectfont look-controls} kann die Rotation einer Entität manipuliert werden. Wenn {\fontfamily{qcr}\selectfont look-controls} als Attribut von {\fontfamily{qcr}\selectfont a-camera} eingesetzt wird, wird es realisiert, den Winkel der Kamera zu manipulieren.
   
@@ -470,7 +470,7 @@ AFRAME.registerComponent('camera-move', {
   \vspace{1em}
   
   \noindent
-  Die Manipulation auf PC und Smartphone wird mit dem built-in Component {\fontfamily{qcr}\selectfont a-cursor} implementiert (Abbildung ~\ref{fig:aCursorElement}). Um den Zeiger in der Mitte der Sicht darzustellen, wird {\fontfamily{qcr}\selectfont a-cursor} als ein Child-Component von {\fontfamily{qcr}\selectfont a-camera} eingesetzt.
+  Die Manipulation auf PC und Smartphone wird mit dem built-in Component {\fontfamily{qcr}\selectfont a-cursor} implementiert.(Abbildung ~\ref{fig:aCursorElement}) Um den Zeiger in der Mitte der Sicht darzustellen, wird {\fontfamily{qcr}\selectfont a-cursor} als ein Child-Component von {\fontfamily{qcr}\selectfont a-camera} eingesetzt.
   
  \begin{figure}[ht]
 \vspace*{1em}
@@ -488,13 +488,13 @@ fuse-timeout="1000" position="0 0 -0.1" geometry="primitive: ring; radiusInner: 
   
   Das Attribut {\fontfamily{qcr}\selectfont objects} beschreibt, mit welchen Objekten man interagieren kann. Alle solche Objekte werden mit der HTML Klasse {\fontfamily{qcr}\selectfont clickable} bezeichnet. Mit dem Attribut {\fontfamily{qcr}\selectfont geometry} wird der Zeiger als ein Ring definiert.
   
-  Als Standardeinstellung wird der Zeiger auf dem PC aktiviert, wenn die linke Taste von der Maus gedrückt wird. Mit dem Attribut {\fontfamily{qcr}\selectfont fuse-timeout} wird der Zeiger auf dem Smartphone konfiguriert. Die Wert 1000 bedeutet, dass der Zeiger aktiviert wird, wenn der Zeiger auf einem Objekt 1 Sekunde fokussiert.
+  Als Standardeinstellung wird der Zeiger auf dem PC aktiviert, wenn die linke Taste von der Maus gedrückt wird. Mit dem Attribut {\fontfamily{qcr}\selectfont fuse-timeout} wird der Zeiger auf dem Smartphone konfiguriert. Die Wert 1000 bedeutet, dass der Zeiger aktiviert wird, wenn der Zeiger auf einem Objekt für 1 Sekunde fokussiert.
   
   Das Attribut {\fontfamily{qcr}\selectfont raycaster-intersection} ist eine Entität der Klasse {\fontfamily{qcr}\selectfont raycaster-intersection}, welche die Funktion realisiert, dass der Zeiger farblich zu grün wechselt, wenn der Zeiger die Objekte trifft, mit denen interagiert werden kann.
   
   Das Event {\fontfamily{qcr}\selectfont raycaster-intersected} wird auf den Objekten selber emittiert, wenn das raycaster sich mit den Objekten überlappt. Im Gegenzug wird {\fontfamily{qcr}\selectfont raycaster-intersected-cleard} emittiert, wenn nichts mit dem Raycaster überlappt.
   
-  Da {\fontfamily{qcr}\selectfont a-cursor} die Eigenschaften von Raycaster integriert hat, stehen die Events {\fontfamily{qcr}\selectfont raycaster-intersection} und {\fontfamily{qcr}\selectfont raycaster-intersection-cleard} für {\fontfamily{qcr}\selectfont a-cursor} zu Verfügung. (Abbildung ~\ref{fig:raycasterIntersection})
+  Da {\fontfamily{qcr}\selectfont a-cursor} die Eigenschaften von Raycaster integriert hat, stehen die Events {\fontfamily{qcr}\selectfont raycaster-intersection} und {\fontfamily{qcr}\selectfont raycaster-intersection-cleard} für {\fontfamily{qcr}\selectfont a-cursor} zur Verfügung. (Abbildung ~\ref{fig:raycasterIntersection})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -558,7 +558,7 @@ export default AFRAME.registerComponent('cursor-submit', {
   
   Zwei mögliche Lösungen werden angegangen, Raycaster und große Skalierung.
   \begin{itemize}
-      \item \textbf{Raycaster}: Die Idee des Raycasters ist, den Raycaster vom Controller zu den Augen zu bringen. Der Zeiger ist nicht mehr ein Ring, sondern eins aus dem Augen ausstrahlende Linie, sodass der Abstand zwischen Augen und Objekten keine Rolle spielt. Allerdings wird der Raycaster in Gear VR nicht richtig dargestellt. Die Linie wird in viele kurze Stückchen geschnitten. Und die Stückchen zeigen nicht in eine bestimmte Richtung. (Abbildung ~\ref{fig:GearVRRaycaster})
+      \item \textbf{Raycaster}: Die Idee des Raycasters ist, den Raycaster vom Controller zu den Augen zu bringen. Der Zeiger ist nicht mehr ein Ring, sondern eins aus dem Augen ausstrahlende Linie, sodass der Abstand zwischen Augen und Objekten keine Rolle spielt. Allerdings wird der Raycaster in Gear VR nicht richtig dargestellt. Die Linie wird in viele kurze Stückchen geschnitten. Die Stückchen zeigen nicht in eine bestimmte Richtung. (Abbildung ~\ref{fig:GearVRRaycaster})
       
 \begin{figure}[ht]
 \vspace*{2.5em}
@@ -598,7 +598,7 @@ export default AFRAME.registerComponent('cursor-submit', {
   
   Wenn das Trackpad auf dem Gear VR Controller gedrückt wird, wird die Position festgelegt. Solange der Trackpad losgelöst wird, bewegt sich das Element {\fontfamily{qcr}\selectfont cameraRig} zu der festgelegten Position. Die Position der Kamera auf den X und Z Achsen sind die gleichen wie die festgelegten Positionen.
   
-  Die Manipulation wird durch das Component {\fontfamily{qcr}\selectfont laser-controls} realisiert. Mit dem Component wird nicht nur der Gear VR Controller, sondern auch Daydrame Controller usw. (Abbildung ~\ref{fig:GearVRControllerElement} \& Abbildung ~\ref{fig:GearVRWithController})
+  Die Manipulation wird durch das Component {\fontfamily{qcr}\selectfont laser-controls} realisiert. Mit dem Component werden nicht nur der Gear VR Controller, sondern auch Daydrame Controller usw. unterstützt. (Abbildung ~\ref{fig:GearVRControllerElement} \& Abbildung ~\ref{fig:GearVRWithController})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -726,7 +726,7 @@ export function getWorldPosition(element) {
   \vspace{1em}
   
   \noindent
-  Weil die Manipulation mit Vive Controllern große Freiheiten hat, und nicht jede Ausführung einer Aktivität den Fortschritt fördert, wird eine neue Liste für die Zustände der Vive Controller und die entsprechenden Funktionen erstellt.
+  Weil die Manipulation mit Vive Controllern große Freiheiten hat und nicht jede Ausführung einer Aktivität den Fortschritt fördert, wird eine neue Liste für die Zustände der Vive Controller und die entsprechenden Funktionen erstellt.
   
   Zum Beispiel wird der Wert des Zustands für Vive Controller {\fontfamily{qcr}\selectfont portfolioInHand} als die ID des Controllers, der mit der Krankenakte interagiert, gespeichert, und die Zustände an die Observers (Krankenakte usw.) geschickt. Solange die Änderung des Zustands im Component der Krankenakte übergeben wird, wird das Element der Krankenakte in dem Element des entsprechenden Controllers eingezogen. (Abbildung ~\ref{fig:controller6D} \& Abbildung ~\ref{fig:portfolioPress})
   
@@ -770,7 +770,7 @@ export function handleControllerPressPortfolio (triggerEvent) {
   \noindent
   Wenn ein Element in dem Controller Element eingezogen oder aus dem Controller ausgezogen wird, wird die Dimension der Koordinaten geändert. Deshalb muss das Attribut Position neu berechnet und umgesetzt werden.
   
-  Normalerweise kann das Attribut direkt mit dem Befehl {\fontfamily{qcr}\selectfont setAttribute} konfiguriert werden. Allerdings sind die 3D A-Frame Objekte viel größer als 2D Objekte, sodass die DOM Manipulation länger dauert. Deshalb passiert es, dass die Änderung des Attributs vor dem Umzug des DOM Elements geschafft wird. Und nach dem Umzug wird das Attribut wieder zurückgesetzt.
+  Normalerweise kann das Attribut direkt mit dem Befehl {\fontfamily{qcr}\selectfont setAttribute} konfiguriert werden. Allerdings sind die 3D A-Frame Objekte viel größer als 2D Objekte, sodass die DOM Manipulation länger dauert. Deshalb passiert es, dass die Änderung des Attributs vor dem Umzug des DOM Elements geschafft wird. Nach dem Umzug wird das Attribut wieder zurückgesetzt.
   
   Um das Problem zu lösen, muss die DOM Funktion {\fontfamily{qcr}\selectfont MutationObserver} verwendet werden. Die Funktion {\fontfamily{qcr}\selectfont MutationObserver} ist zuständig dafür, die Änderung der gegebenen Attribute eines Elements zu beobachten. Wenn die Änderung fertig ist, wird eine Nachricht an alle Observers geschickt.
   
@@ -1033,7 +1033,7 @@ easing    & Die Erleichterung der Animation                                     
 \label{tab:aAnimation} 
 \end{table}
  
- Um die Animation einfach zu benutzen, wird eine Funktion entwickelt. Das \glqq a-animation\grqq Element wird erstellt. Und nach dem Laufen der Animation wird das Element nach dem Bedarf, der als Parameter eingegeben, entworfen oder behalten. (Abbildung ~\ref{fig:aAnimation})
+ Um die Animation einfach zu benutzen, wird eine Funktion entwickelt. Das \glqq a-animation\grqq\ Element wird erstellt. Nach dem Laufen der Animation wird das Element nach dem Bedarf, der als Parameter eingegeben, entworfen oder behalten. (Abbildung ~\ref{fig:aAnimation})
  
 \begin{figure}[ht]
 \vspace*{1em}
@@ -1122,7 +1122,7 @@ controllerRightHand.setAttribute("animation-mixer", "loop: once");
  
  Mit der Hilfe der Funktion {\fontfamily{qcr}\selectfont tick} wird jede Sekunde das Attribut {\fontfamily{qcr}\selectfont Rotation} aller drei Zeiger aktualisiert. 
  
- Um den Winkel der Rotation zu berechnen wird zuerst die aktuelle Uhrzeit durch die Klasse {\fontfamily{qcr}\selectfont Data} erhalten. Und mit den Funktionen {\fontfamily{qcr}\selectfont getSeconds}, {\fontfamily{qcr}\selectfont getMinutes}, {\fontfamily{qcr}\selectfont getHours} werden die Ziffern für jeden Zeiger berechnet.
+ Um den Winkel der Rotation zu berechnen wird zuerst die aktuelle Uhrzeit durch die Klasse {\fontfamily{qcr}\selectfont Data} erhalten. Mit den Funktionen {\fontfamily{qcr}\selectfont getSeconds}, {\fontfamily{qcr}\selectfont getMinutes}, {\fontfamily{qcr}\selectfont getHours} werden die Ziffern für jeden Zeiger berechnet.
  
  Danach wird der Winkel jedes Zeigers berechnet, der sich bei jeder Bewegung dreht. Für Sekundenzeiger und Minutenzeiger ist der Winkel {\fontfamily{qcr}\selectfont  360/60}. Für Stundenzeiger ist der Winkel {\fontfamily{qcr}\selectfont  360/12}.
  
