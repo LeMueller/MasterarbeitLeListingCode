@@ -774,9 +774,9 @@ export function handleControllerPressPortfolio (triggerEvent) {
   
   Um das Problem zu lösen, muss die DOM Funktion {\fontfamily{qcr}\selectfont MutationObserver} verwendet werden. Die Funktion {\fontfamily{qcr}\selectfont MutationObserver} ist zuständig dafür, die Änderung der gegebenen Attribute eines Elements zu beobachten. Wenn die Änderung fertig ist, wird eine Nachricht an alle Observers geschickt.
   
-  Weil die DOM Manipulation sehr häufig ist und fast alle aufwendigen Änderungen mit den Controllern zu tun haben, wird die Funktion {\fontfamily{qcr}\selectfont MutationObserver} in einer Klasse {\fontfamily{qcr}\selectfont controllerActions} verpackt, um die Verwendung zu vereinfachen.
+  Weil die DOM Manipulation sehr häufig verwendet wird und fast alle aufwendigen Änderungen mit den Controllern zu tun haben, wird die Funktion {\fontfamily{qcr}\selectfont MutationObserver} in einer Klasse {\fontfamily{qcr}\selectfont controllerActions} verpackt, um die Verwendung zu vereinfachen.
   
-  Die {\fontfamily{qcr}\selectfont MutationObserver} beachten die {\fontfamily{qcr}\selectfont childList} des eingegebenen Controllers. Wenn die Einfügung und Entfernung der Child Elements des Controllers fertig ist, werden die eingegebenen Attribute eingesetzt. (Abbildung ~\ref{fig:controllerAction})
+  Die {\fontfamily{qcr}\selectfont MutationObserver} beachtet die {\fontfamily{qcr}\selectfont childList} des eingegebenen Controllers. Wenn die Einfügung und Entfernung der Child Elements des Controllers fertig ist, werden die eingegebenen Attribute eingesetzt. (Abbildung ~\ref{fig:controllerAction})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -835,7 +835,7 @@ export class controllerActions {
   \noindent
   Die Hinweis-Box wird durch das built-in Element {\fontfamily{qcr}\selectfont a-box} implementiert. Durch die Konfiguration des Attributs {\fontfamily{qcr}\selectfont material} wird die Hinweis-Box in halb-transparentem rot dargestellt, wenn ein Objekt, beispielsweise die Krankenakte, in der Hand ist. Die Hinweis-Box beobachtet die Zustände aller Objekte. Wenn alle nötige Aktivitäten für das Objekt fertig gemacht sind, z.B. Überprüfung der Krankenakte, werden die Änderungen der entsprechenden Zustände von der Hinweis-Box erkannt. Nach der Erkennung wird das Attribut {\fontfamily{qcr}\selectfont material} in grün umgeschrieben.
   
-  Wenn die Kollision zwischen der grünen Hinweis-Box und dem Objekt in der Hand während des Loslösens auf den Hair-Trigger des Controllers detektiert wird, wird der entsprechende Zustand geändert und das Objekt auf den entsprechend Platz gelegt. (Abbildung ~\ref{fig:Hinweis-box})
+  Wenn die Kollision zwischen der grünen Hinweis-Box und dem Objekt in der Hand während des Loslösens auf den Hair-Trigger des Controllers detektiert wird, wird der entsprechende Zustand geändert und das Objekt auf den entsprechenden Platz gelegt. (Abbildung ~\ref{fig:Hinweis-box})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -884,13 +884,13 @@ export function detectCollision(elementObject, elementTarget) {
   
   \noindent
   kann die Geschwindigkeit so errechnet {\fontfamily{qcr}\selectfont speed = speed + accelerate} werden.
-  Da die reale Erdbeschleunigung 9.8 m/s² ist, soll die konstante Wert {\fontfamily{qcr}\selectfont accelerate} 0.098 sein. Aber in der simulierten VR Umgebung fällt das Objekt zu schnell, sodass das Fallen nicht deutlich gemerkt werden kann. Um bessere Benutzererfahrung zu implementieren, wird die Wert {\fontfamily{qcr}\selectfont accelerate} als 0.049 befestigt.
+  Da die reale Erdbeschleunigung 9.8 m/s² ist, soll die konstante Wert {\fontfamily{qcr}\selectfont accelerate} 0.098 sein. Aber in der simulierten VR Umgebung fällt das Objekt zu schnell, sodass das Fallen nicht deutlich gemerkt werden kann. Um bessere Benutzererfahrung zu implementieren, wird die Wert {\fontfamily{qcr}\selectfont accelerate} als 0.049 festgelegt.
   
-  Um den passende Zeitpunkt zu finden, das Fallen zu beenden, wird jede 0.01 Millisekunde die Kollision auf Y-Achse detektiert. Allerdings könnte es passieren, dass vor der Detektion das Objekt in der letzten 0.01 Millisekunde schon in anderem Objekt, beispielsweise in den Boden, gefallen ist. Wenn das Objekt sehr dünn ist, z.B. Namenetikett, wird es nicht mehr gesehen.
+  Um den passenden Zeitpunkt zu finden, das Fallen zu beenden, wird jede 0.01 Millisekunde die Kollision auf Y-Achse detektiert. Allerdings könnte es passieren, dass vor der Detektion das Objekt in der letzten 0.01 Millisekunde schon in anderem Objekt, beispielsweise in den Boden, gefallen ist. Wenn das Objekt sehr dünn ist, z.B. Namenetikett, wird es nicht mehr gesehen.
   
   Um das Problem zu vermeiden, wird eine Variable {\fontfamily{qcr}\selectfont lowestY} benutzt. Damit kann eine neue Ebene erstellt werden, die als eine Kollisions-Ebene auf der Y-Achse gilt. Mit der Hilfe der neuen Ebene, kann das Fallen des Objektes früher beendet werden. Allerdings kann es passieren, dass das Objekt oberhalb des Boden liegt.
   
-  Außer Boden (Y = 0) können andere Objekte eine wichtige Rolle bei dem Fallen spielen, z.B die Arbeisoberfläche auf den Schubladentisch. Um den Bereich der Arbeitsoberfläche zu finden, muss die Koordination des Rahmen des Schubladentisches in der Szene gefunden werden. Das A-Frame Objekt wird erst zum three.js Box3 Objekt umgesetzt. Der Wert der Position des Rahmens des Objektes kann aus der Eigenschaft {\fontfamily{qcr}\selectfont boundingBox} gefunden werden. Die höchste Fläche gilt als der Kollisionsbereich. (Abbildung ~\ref{fig:fallDown})
+  Außer Boden (Y = 0) können andere Objekte eine wichtige Rolle bei dem Fallen spielen, z.B die Arbeitsoberfläche auf den Schubladentisch. Um den Bereich der Arbeitsoberfläche zu finden, muss die Koordination des Rahmens des Schubladentisches in der Szene gefunden werden. Das A-Frame Objekt wird erst zum three.js Box3 Objekt umgesetzt. Der Wert der Position des Rahmens des Objektes kann aus der Eigenschaft {\fontfamily{qcr}\selectfont boundingBox} gefunden werden. Die höchste Fläche gilt als der Kollisionsbereich. (Abbildung ~\ref{fig:fallDown})
   
 \begin{figure}[ht]
 \vspace*{1em}
@@ -928,7 +928,7 @@ export function getWorldBound(element) {
 \end{figure}
   
   \subsubsection{Möglichkeit der Verbesserung}
-  Die kürzere Ladezeit der Applikation führt zur besseren Benutzererfahrung. Die Größe der Dateien spielt eine wichtige Rolle bei der Ladung.
+  Die kürzere Ladezeit der Applikation führt zu einer besseren Benutzererfahrung. Die Größe der Dateien spielt eine wichtige Rolle bei der Ladung.
   
   Nicht alle Geräte können sich mit der HTC Vive verbinden, deswegen wäre es besser, dass die Codes, die mit HTC Vive zu tun haben, in eine eigene Datei geschrieben und in einem Verzeichnis gespeichert werden. Dieses Verzeichnis wird geladen, nur wenn die HTC Vive Controller erkannt werden.
   
@@ -971,7 +971,7 @@ PC & Vive                                                                       
  \subsection{Töne}
  Die Töne sind wichtig, um eine lebhaftere Simulation aufzubauen. Alle realen Geräusche werden während der Übung im realen Skillslab der Fachhochschule Bielelfeld aufgenommen. Die Größe ist ca. 14 MB. Es ist zu groß, um es in einer webbasierten Applikation einzufügen, weil es zu langer Zeit für das Laden führt. Deswegen werden nur die Geräusche für die Feedbacks von Controllern eingesetzt.
  
- Vier Geräusche werden bei der Kamera eingesetzt, und für den Druck und die Loslösung des Hair-Triggers und dem Trackpad angepasst. Die built-in Funktion {\fontfamily{qcr}\selectfont playSound} wird in dem Objekt {\fontfamily{qcr}\selectfont sound} von {\fontfamily{qcr}\selectfont components} eingepackt. Wenn ein Event von Controllern emittiert wird, wird die Funktion {\fontfamily{qcr}\selectfont playSound} das entsprechende Sound Objekt aufgerufen. (Abbildung ~\ref{fig:submitSound})
+ Vier Geräusche werden bei der Kamera eingesetzt und für den Druck und die Loslösung des Hair-Triggers und dem Trackpad angepasst. Die built-in Funktion {\fontfamily{qcr}\selectfont playSound} wird in dem Objekt {\fontfamily{qcr}\selectfont sound} von {\fontfamily{qcr}\selectfont components} eingepackt. Wenn ein Event von Controllern emittiert wird, wird die Funktion {\fontfamily{qcr}\selectfont playSound} das entsprechende Sound Objekt aufgerufen. (Abbildung ~\ref{fig:submitSound})
  
 \begin{figure}[ht]
 \vspace*{1em}
@@ -1010,7 +1010,7 @@ export function playSubmitSound() {
 \end{figure}
  
  \subsection{Animation}
- Die Animation in A-Frame wird auch durch ein HTML Element {\fontfamily{qcr}\selectfont a-animation} bezeichnet. Das übergeordnete Element ist das Objekt das zu animieren ist. Die genaue Manipulation wird durch die Attribute des {\fontfamily{qcr}\selectfont a-animation} Elements konfiguriert. (Tabelle ~\ref{tab:aAnimation})
+ Die Animation in A-Frame wird auch durch ein HTML Element {\fontfamily{qcr}\selectfont a-animation} bezeichnet. Das übergeordnete Element ist das Objekt, das zu animieren ist. Die genaue Manipulation wird durch die Attribute des {\fontfamily{qcr}\selectfont a-animation} Elements konfiguriert. (Tabelle ~\ref{tab:aAnimation})
  
 \begin{table}
 \centering
@@ -1033,7 +1033,7 @@ easing    & Die Erleichterung der Animation                                     
 \label{tab:aAnimation} 
 \end{table}
  
- Um die Animation einfach zu benutzen, wird eine Funktion entwickelt. Das \glqq a-animation\grqq\ Element wird erstellt. Nach dem Laufen der Animation wird das Element nach dem Bedarf, der als Parameter eingegeben, entworfen oder behalten. (Abbildung ~\ref{fig:aAnimation})
+ Um die Animation einfach zu benutzen, wird eine Funktion entwickelt. Mit dieser Funktion wird {\fontfamily{qcr}\selectfont a-animation} Element erstellt. Nach dem Laufen der Animation wird das Element nach dem Bedarf, der als Parameter eingegeben wird, entworfen oder behalten. (Abbildung ~\ref{fig:aAnimation})
  
 \begin{figure}[ht]
 \vspace*{1em}
@@ -1122,7 +1122,7 @@ controllerRightHand.setAttribute("animation-mixer", "loop: once");
  
  Mit der Hilfe der Funktion {\fontfamily{qcr}\selectfont tick} wird jede Sekunde das Attribut {\fontfamily{qcr}\selectfont Rotation} aller drei Zeiger aktualisiert. 
  
- Um den Winkel der Rotation zu berechnen wird zuerst die aktuelle Uhrzeit durch die Klasse {\fontfamily{qcr}\selectfont Data} erhalten. Mit den Funktionen {\fontfamily{qcr}\selectfont getSeconds}, {\fontfamily{qcr}\selectfont getMinutes}, {\fontfamily{qcr}\selectfont getHours} werden die Ziffern für jeden Zeiger berechnet.
+ Um den Winkel der Rotation zu berechnen, wird zuerst die aktuelle Uhrzeit durch die Klasse {\fontfamily{qcr}\selectfont Data} erhalten. Mit den Funktionen {\fontfamily{qcr}\selectfont getSeconds}, {\fontfamily{qcr}\selectfont getMinutes}, {\fontfamily{qcr}\selectfont getHours} werden die Ziffern für jeden Zeiger berechnet.
  
  Danach wird der Winkel jedes Zeigers berechnet, der sich bei jeder Bewegung dreht. Für Sekundenzeiger und Minutenzeiger ist der Winkel {\fontfamily{qcr}\selectfont  360/60}. Für Stundenzeiger ist der Winkel {\fontfamily{qcr}\selectfont  360/12}.
  

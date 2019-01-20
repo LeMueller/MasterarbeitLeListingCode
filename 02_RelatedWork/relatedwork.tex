@@ -179,6 +179,7 @@ Neben den vielen Vorteilen existieren allerdings auch Nachteile, die nicht ignor
 \end{enumerate}\
 
 \section{Stand der Technik}
+Als die technische Grundlagen dieses Projektes werden VR Technik und WebVR Technik erzählt.
  \subsection{Virtuelle Realität (VR)}
   \subsubsection{Technologie}
 Carolina Cruz-Neira \citep{19} hat die technologieorientierte Definition von VR entwickelt \glqq Virtual Reality refers to immersive, interactive, multi-sensory, viewer-centered, three-dimensional computer generated environments and the combination of technologies required to build these environments.\grqq\
@@ -233,11 +234,12 @@ Bei HMDs (Head-Mounted Display) werden die Bilder entsprechend dem rechten und l
   Im Vergleich zu 3 DoF HMDs, kann ein 6 DoF HMD nicht nur die Rotationen sondern auch die Translationen erkennen und umsetzen. Erfahrungsmässig sind mobile HMDs wegen des Mangels der Leistung 3 DoF Geräte. Durch einen externen starken Rechner kann die immobile HMD die 6 DoF-Leistung bewältigen. (Abbildung ~\ref{fig:6DoF-vs-3DoF})
   
 \begin{figure}[ht]
-\vspace*{1em}
+\vspace*{1.5em}
 \centering
 \caption{3 DoF \& 6 DoF}
 \includegraphics[width=\textwidth]{images/6DoF-vs-3DoF.jpg}
-\label{fig:6DoF-vs-3DoF} 
+\label{fig:6DoF-vs-3DoF}
+\vspace*{1em}
 \end{figure}
   
   Theoretisch wird ein 3 DoF Controller z.B. Gear VR Controller und Daydream VR Controller für ein 3 Dof HMD ausgestattet. Die Position von 3 Dof Controllern in dem Raum ist fest. Die Interaktion zwischen den Objekten und dem Controller wird durch einem von Controller strahlenden Raycaster aufgerufen. (Abbildung ~\ref{fig:3dcontroller})
